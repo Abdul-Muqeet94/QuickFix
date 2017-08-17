@@ -1,0 +1,128 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 p-0">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Order</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 p-0">
+            <div class="page-header">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Order</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card alert">
+                    <div class="card-header">
+                        <h4>Order </h4>
+                        <br>
+                        <div class="card-header-right-icon">
+                            <ul>
+                                <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+                                <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!---------View Customer ------------>
+                    <!--start here-->
+                    <div class="card-body">
+                        <div class="basic-form ">
+                            <form ng-submit="search()">
+                                <div class="row">
+                                    <div class="form-group col-lg-3">
+                                        <label>From Date</label>
+                                        <input ng-model="filter.fromDate" class="form-control input-default" datetime-picker date-format="yyyy-MM-dd" date-only required/>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>To Date</label>
+                                        <input ng-model="filter.toDate" class="form-control input-default" datetime-picker date-format="yyyy-MM-dd" date-only required/>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>Order Id</label>
+                                        <input type="number" ng-model="filter.orderId" class="form-control input-default" required/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-3">
+                                        <label for="singleSelect"> Select Employee</label><br>
+                                        <select name="singleSelect" id="singleSelect" ng-model="filter.employeeId">
+                                                 <option  value="" disabled>Please select an option</option>
+                                                 <option  value="0"></option>
+                                              <option ng-repeat="emp in employee"  value="{{emp.id}}">{{emp.name}}</option> 
+                                             </select>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label for="singleSelect"> Select Service</label><br>
+                                        <select name="singleSelect" id="singleSelect" ng-model="filter.serviceId">
+                                                 <option  value="" disabled>Please select an option</option>
+                                                 <option  value="0"></option>
+                                              <option ng-repeat="service in services"  value="{{service.id}}">{{service.name}}</option> 
+                                             </select>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label for="singleSelect"> Select feature</label><br>
+                                        <select name="singleSelect" id="singleSelect" ng-model="filter.featureId">
+                                                 <option  value="" disabled>Please select an option</option>
+                                                 <option  value="0"></option>
+                                              <option ng-repeat="feature in features"  value="{{feature.id}}">{{feature.name}}</option> 
+                                             </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div ng-show="toShow" class="bootstrap-data-table-panel">
+                            <table class="table table-responsive" datatable="ng" dt-options="dtOptions">
+                                <thead>
+                                    <tr>
+                                        <th>S. No.</th>
+                                        <th>Customer Name</th>
+                                        <th>house No</th>
+                                        <th>landmark</th>
+                                        <th>contact No</th>
+                                        <th>services Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="task in tasks ">
+                                        <td>{{task.id}}</td>
+                                        <td>{{task.name}}</td>
+                                        <td>{{task.house_no}}</td>
+                                        <td>{{task.landmark}}</td>
+                                        <td>{{task.customer_contact}}</td>
+                                        <td> <span class="badge badge-primary" ng-repeat="service in task.selected_features">{{service.name}}</span></td>
+
+                                        <td><button ng-click="viewTask(task.id)" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-close"></i>View</button>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--End here-->
+                        <!---------View Customer ------------>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+        </div>
+        <!-- /# row -->
+    </div>
+    <!-- /# main content -->
+</div>
+<!-- /# container-fluid -->

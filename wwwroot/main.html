@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Quick Fix</title>
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="css/carousel.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<!-- Owl Carousel Assets -->
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<style>
+.corners
+{
+  text-align: center;
+  font-weight: 700;
+  width: 170px;
+  height: 60px;
+  background-color:white;
+  margin: 3px 3px 10px 3px;
+      padding-top: 20px;
+border-style: solid;
+border-width: 1px;
+}
+.corners:hover
+{
+  background-color: #85d009;
+}
+.color
+{
+  color: #85d009;
+}
+.mymod
+{
+  align-items: center;
+}
+
+.check-element {
+  border: 1px solid black;
+  opacity: 1;
+  padding: 10px;
+}
+
+
+.mapcss {
+  width: 550px;
+height:300px;
+
+}
+</style>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+<body>
+<div id="wrapper">
+  <div class="header_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <div class="left_header_side">
+            <p> Stay connected: </p>
+            <div class="icons_social_media"> <i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i> <i class="fa fa-linkedin" aria-hidden="true"></i> <i class="fa fa-pinterest-p" aria-hidden="true"></i> <i class="fa fa-instagram" aria-hidden="true"></i> <i class="fa fa-youtube" aria-hidden="true"></i> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xs-12" >
+          <div class="right-header_top">
+            <p> Sun – Thurs: 9.00 – 20.00 · Friday/Saturday: Closed </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-xs-12">
+          <div class="logo"> <img src="images/logo.png" class="img-responsive" alt=""/> </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="header_cta">
+            <div class="here_quick_fix"> <i class="fa fa-phone" aria-hidden="true"></i>
+              <h4> CALL US NOW: <span>+ 123 4567 8910 or WhatsApp</span> </h4>
+            </div>
+            <div class="here_quick_fix">
+              <h4><a href="#contacts"> HIRE A Quick Fix <span>Special Request</span></a> </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--
+--></div>
+  <div class="navigation_bar">
+    <div class="container">
+      <div class="navbar " role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav  wow fadeInRight">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li class="dropdown"><a href="">Our Service</a>
+                <ul class="dropdown-menu">
+                  <li><a href="" ng-click="fillForm('AC Service & Repair')">AC Service & Repair</a></li>
+                  <li><a href="" ng-click="fillForm('CCTV Camera')">CCTV Camera</a></li>
+                  <li><a href="" ng-click="fillForm('Marble Tiles & Sanitary')">Marble Tiles & Sanitary</a></li>
+                  <li><a href="" ng-click="fillForm('Electrician')">Electrician</a></li>
+                  <li><a href="" ng-click="fillForm('House Painters')">House Painters</a></li>
+                  <li><a href="" ng-click="fillForm('Aluminum & Glass Work')">Aluminum & Glass Work</a></li>
+                  <li><a href="" ng-click="fillForm('Carpenter')">Carpenter</a></li>
+                  <li><a href="" ng-click="fillForm('Drilling & Hanging')">Drilling & Hanging</a></li>
+                  <li><a href="" ng-click="fillForm('Ceiling')">Ceiling</a></li>
+                  <li><a href="" ng-click="fillForm('Plumbing')">Plumbing</a></li>
+                  <li><a href="" ng-click="fillForm('Bathroom Deep Cleaning')">Bathroom Deep Cleaning</a></li>
+                </ul>
+              </li>
+              <li><a href="#blogs">Our Blog</a></li>
+              <li><a href="#contacts">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner_section">
+    <div class="container">
+      <div class="banner_content">
+        <h1 class="wow bounceInUp">Book Tested, Quality Maintenance Pros On-Demand for your Needs.</h1>
+        <h2 class="wow bounceInUp">Free Inspections | Cost Effective | Hassle Free Experience</h2>
+        <div class="row">
+          <div class="search_form">
+            <form>
+              <div class="col-md-3 col-sm-3 wow fadeInLeft">
+                		 <angucomplete-alt id="ex1"
+              placeholder="Search Services"
+              pause="100"
+              selected-object="selectedService"
+              local-data="services"
+              search-fields="name"
+              title-field="name"
+              minlength="1"
+              input-class="form-control input-lg cusomn_imput"/>
+              </div>
+              <div class="col-md-3 col-sm-3 wow fadeInRight">
+                <input type="text" class="form-control input-lg cusomn_imput"  ng-model="email" placeholder="enter email address" />
+              </div>
+              <div class="col-md-3 col-sm-3 wow fadeInLeft">
+                <input type="text" class="form-control input-lg cusomn_imput"  ng-model="contact" placeholder="enter contact number" />
+              </div>
+              <div class="col-md-3 col-sm-3 wow fadeInLeft">
+                <div class="banner_section_btn">
+                  <button class="btn btn_banner_custom" ng-click="book()"> BOOK NOW <i class="fa fa-long-arrow-right" aria-hidden="true"></i> </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="high_quality_main wow fadeInUp">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <div class="inner_box_high_quality">
+            <div class="img_quality"> <img src="images/quick_img_1.png" width="42" height="42" alt=""/> </div>
+            <div class="qualiy_text">
+              <h3>{{cms[0].heading}}</h3>
+              <p> {{cms[0].content}} </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="inner_box_high_quality">
+            <div class="img_quality"> <img src="images/quick_img_2.png" width="42" height="42" alt=""/> </div>
+            <div class="qualiy_text">
+              <h3>{{cms[1].heading}}</h3>
+              <p> {{cms[1].content}} </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="inner_box_high_quality border_none">
+            <div class="img_quality"> <img src="images/quick_img_2.png" width="42" height="42" alt=""/> </div>
+            <div class="qualiy_text">
+              <h3>{{cms[2].heading}}</h3>
+              <p> {{cms[2].content}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="service_block">
+    <div class="container">
+      <h2>Our Services</h2>
+     <div class="row">
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-1.png" alt="Packers & Movers"/>
+				<h3>AC Service & Repair</h3>
+                <p>
+                AC Installation, Gas Refilling, Cleaning and more  
+                </p>
+                <a href="" ng-click="serviceClicked('AC Service & Repair')" >More...</a>
+			</div>
+			</div>
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-2.png" alt="AC Service and Repair"/>
+				<h3 class="">CCTV Camera</h3>
+                <p>
+                  Installation, Fixation, Repairs, Purchase and more
+                </p>
+                 <a href="" ng-click="serviceClicked('CCTV Camera')" >More...</a>
+			</div>
+			</div>
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-3.png" alt="Home Deep Cleaning"/>
+				<h3 class="">Marble Tiles & Sanitary</h3>
+                <p>Flooring, Wall Cladding, Staircase, Bathroom & more </p>
+                <a href="" ng-click="serviceClicked('Marble Tiles & Sanitary')" >More...</a>
+			</div>
+			</div>
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-4.png" alt="Bathroom Deep Cleaning"/>
+				<h3 class="">Electrician</h3>
+                <p>Installation of Spot Lights, Repair/Replace and more</p>
+                <a href="" ng-click="serviceClicked('Electrician')" >More...</a>
+			</div>
+			</div>
+			
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-5.png" alt="Plumber"/>
+				<h3 class="">House Painters</h3>
+                <p>Fresh Paint, Re-Paint, Minor Re-touching and more </p>
+                <a href="" ng-click="serviceClicked('House Painters')" >More...</a>
+			</div>
+			</div>
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-6.png" alt="Electrician"/>
+				<h3 class="">Aluminum & Glass Work</h3>
+                <p>Repairing, Partition, New Cladding and more</p>
+                 <a href="" ng-click="serviceClicked('Aluminum & Glass Work')" >More...</a>
+			</div>
+			</div>
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-7.png" alt="Carpenter"/>
+				<h3 class="">Carpenter</h3>
+                <p>Curtain Fixing, Repairs to Locks and Hinges & more</p>
+                <a href="" ng-click="serviceClicked('Carpenter')" >More...</a>
+			</div>
+			</div>
+			<div class="col-md-3 col-sm-3 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-8.png" alt="Bathroom Deep Cleaning"/>
+				<h3 class="">Drilling & Hanging</h3>
+                <p>Poster & Frame, Lights, Decorative Items and more </p>
+                <a href="" ng-click="serviceClicked('Drilling & Hanging')" >More...</a>
+			</div>
+			</div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 col-sm-4 col-md-offset-01 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-9.png" alt="Bathroom Deep Cleaning"/>
+				<h3 class="">Ceiling</h3>
+                <p>Repair Cracks, Replacing Ceiling Panels and more </p>
+                 <a href="" ng-click="serviceClicked('Ceiling')" >More...</a>
+			</div>
+			</div>
+            
+            <div class="col-md-4 col-sm-4 col-md-push-01 wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-10.png" alt="Bathroom Deep Cleaning"/>
+				<h3 class="">Plumbing</h3>
+                <p>Cleaning and Repairing Fittings, Pump Repair & more</p>
+                <a href="" ng-click="serviceClicked('Plumbing')" >More...</a>
+			
+      </div>
+			</div>
+            
+            <div class="col-md-4 col-sm-4  wow flipInX">
+			<div class="service_block_content">
+				<img src="views/images/services-icon-11.png" alt="Bathroom Deep Cleaning"/>
+				<h3 class="">Bathroom Deep Cleaning</h3>
+                <p>Hard Water Marks Removal, Wall Tiles Cleaning & more </p>
+                 <a href="" ng-click="serviceClicked('Bathroom Deep Cleaning')" >More...</a>
+			</div>
+			</div>
+            
+            
+            
+		</div>
+</div>
+<div class="clearfix"></div>
+<div class="welcome_section">
+  <div class="bg_opacity"></div>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="col-md-6 col-sm-6 welcom_content wow fadeInLeft">
+        <h2>Welcome to Quick Fix</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry<br>
+          Lorem Ipsum has been the industry's standard dummy text ever</p>
+        <a class="btn" href="#">Read More</a> </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="video_sections">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-xs-12"> <img src="images/video_img_1.jpg" class="img-responsive" width="100%" alt=""/> </div>
+      <div class="col-sm-6 col-xs-12"> <img src="images/video_img_2.jpg" class="img-responsive" width="100%" alt=""/> </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="clients_section">
+  <div class="container">
+    <div id="testi" class="owl-carousel owl-theme">
+      <div class="item">
+        <div class="client_section_box">
+          <div class="quotesStart"></div>
+          <img src="images/client_img_1.png" class="img-responsive" alt=""/>
+          <p> 'Entrepreneurship is a lot like stand-up comedy. Dont be afraid to find your authentic point of view.' </p>
+          <div class="quotesEnd"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="client_section_box">
+          <div class="quotesStart"></div>
+          <img src="images/client_img_2.jpg" class="img-responsive" alt=""/>
+          <p> 'Entrepreneurship is a lot like stand-up comedy. Dont be afraid to find your authentic point of view.' </p>
+          <div class="quotesEnd"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="client_section_box">
+          <div class="quotesStart"></div>
+          <img src="images/client_img_3.png" class="img-responsive" alt=""/>
+          <p> 'Entrepreneurship is a lot like stand-up comedy. Dont be afraid to find your authentic point of view.' </p>
+          <div class="quotesEnd"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="client_section_box">
+          <div class="quotesStart"></div>
+          <img src="images/client_img_1.png" class="img-responsive" alt=""/>
+          <p> 'Entrepreneurship is a lot like stand-up comedy. Dont be afraid to find your authentic point of view.' </p>
+          <div class="quotesEnd"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="client_section_box">
+          <div class="quotesStart"></div>
+          <img src="images/client_img_2.jpg" class="img-responsive" alt=""/>
+          <p> 'Entrepreneurship is a lot like stand-up comedy. Dont be afraid to find your authentic point of view.' </p>
+          <div class="quotesEnd"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="client_section_box">
+          <div class="quotesStart"></div>
+          <img src="images/client_img_3.png" class="img-responsive" alt=""/>
+          <p> 'Entrepreneurship is a lot like stand-up comedy. Dont be afraid to find your authentic point of view.' </p>
+          <div class="quotesEnd"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<div class="stats wow fadeInUp">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+        <h2>107</h2>
+        <p>live services</p>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <h2>1.5 million</h2>
+        <p>customers served</p>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <h2>65,000</h2>
+        <p>verified experts</p>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <h2>4.2</h2>
+        <p>average rating</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="foot_info">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 wow fadeInLeft"> <i class="fa fa-phone" aria-hidden="true"></i> <span> DO YOU HAVE<br/>
+        A QUESTION?</span> <a href="tel:+0123456789">+0123 456 789</a> </div>
+      <div class="col-md-4 col-sm-12 wow fadeInUp"> <i class="fa fa-envelope-o" aria-hidden="true"></i> <span> OFFER <br/>
+        QUESTION?</span> <a href="mailto:Contact@quickfix.com">Contact@quickfix.com</a> </div>
+      <div class="col-md-4 col-sm-12 wow fadeInRight"> <i class="fa fa-life-ring" aria-hidden="true"></i> <span> SUPPORT <br/>
+        QUESTION?</span> <a href="mailto:Contact@quickfix.com">Contact@quickfix.com</a> </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-sx-12">
+        <h2>Terms & Policies & <br>
+          Important Links</h2>
+        <ul class="foot_nav">
+          <li> <a href="#">FAQ</a> </li>
+          <li> <a href="#">Privacy Policy</a> </li>
+          <li> <a href="#">Delivery Policy</a> </li>
+          <li> <a href="#">Return & Refund Policy</a> </li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-3 col-sx-12">
+        <h2>About Us</h2>
+        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, </p>
+      </div>
+      <div class="col-md-3 col-sm-3 col-sx-12">
+        <h2>Contact Us</h2>
+        <p> Give us a call on <span>+123 4567 8910</span> or email us at <span>info@quickfixs.com</span>. 
+          You can also get a <span>free</span> quote and inspection.. 
+          
+          Service providers can join the Quick Fix network 
+          by <span>clicking here</span>. </p>
+      </div>
+      <div class="col-md-3 col-sm-3 col-sx-12">
+        <h2>Popular Services</h2>
+        <ul class="foot_nav">
+          <li><a href="$">AC Maintenance</a></li>
+          <li><a href="#">Annual Maintenance Contract </a></li>
+          <li><a href="$">Carpentry </a></li>
+          <li><a href="#">General Maintenance </a></li>
+          <li><a href="#">Handyman </a></li>
+          <li><a href="#">Interior Renovation </a></li>
+          <li><a href="#">Painting </a></li>
+          <li><a href="#">Swimming Pool Maintenance</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer_bottom">
+  <p>©Copyright 2017 Quick Fix. - All rights reserved</p>
+</div>
+</div>
+<!-- /.container --> 
+
+<!-- Bootstrap core JavaScript
+================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+
+
+<script type="text/ng-template" id="modal.html">
+         <div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+              
+              </div>
+              <!--<div class="modal-body">-->
+                             <div class="modal-body" ng-show="states[0]"  class="check-element animate-show-hide">
+                 <h2 >Select Features</h2>
+       <br>
+      
+                <table ng-show="name!='AC Service & Repair'">
+<tr ng-repeat="msg in message"  >
+
+ <td ng-show="name!='AC Service & Repair'"> <input
+    type="checkbox"
+    name="selectedFruits[]"
+    value="{{msg.id}}"
+    ng-checked="false"
+    ng-click="toggleSelection(msg.id)"
+  > {{msg.name}}
+ </td></tr>
+</table>
+                <table >
+       <tr><td  ng-show="name=='AC Service & Repair'"> <h3>Ac Service & Repair</h3></td></tr>
+           <tr ng-repeat="msg in a1" >
+
+ <td ng-show="name=='AC Service & Repair'"> <input
+    type="checkbox"
+    name="selectedFruits[]"
+    value="{{msg.id}}"
+    ng-checked="false"
+    ng-click="toggleSelection(msg.id)"
+  > {{msg.name}}
+ </td></tr>     
+              <tr> <td ng-show="name=='AC Service & Repair'"> <h3 >Type Of AC</h3></td></tr>
+                <tr ng-repeat="msg in a2" >
+
+ <td ng-show="name=='AC Service & Repair'"> <input
+    type="checkbox"
+    name="selectedFruits[]"
+    value="{{msg.id}}"
+    ng-checked="false"
+    ng-click="toggleSelection(msg.id)"
+  > {{msg.name}}
+ </td></tr>
+     <tr><td ng-show="name=='AC Service & Repair'"><h3>Repairing (Diagnosis & Rectification)</h3></td></tr>
+     <tr ng-repeat="msg in a3"  >
+
+ <td ng-show="name=='AC Service & Repair'"> <input
+    type="checkbox"
+    name="selectedFruits[]"
+    value="{{msg.id}}"
+    ng-checked="false"
+    ng-click="toggleSelection(msg.id)"
+  > {{msg.name}}
+ </td></tr>
+  <br>
+ <tr>
+<td >
+<h5>Upload Image</h5>
+</td>
+ </tr>
+ 
+ <tr>
+<td align="center">
+<input type="file" align="center" ng-model="task.image" id="myfile">
+  </td>
+
+ </tr>
+                </table>
+</div>
+<!--calendar-->
+       
+         <div class="modal-body" ng-show="states[1]"  class="check-element animate-show-hide">
+               <h2 class="modal-title"  >Select Date & Time</h2>
+        
+       <br>
+<div class="row">
+       <!--shift code-->
+<div ng-repeat="shift in shifts" class="col-md-4" >
+<div  class="corners" id="{{shift.id}}" ng-click="SaveShift(shift.id)">
+{{shift.time}}
+</div>
+</div>
+ </div>
+<!--shift code ends-->
+<!--//-->
+<div align="center" class="row" >
+<date-picker ng-model="date" >
+</date-picker>
+</div>
+</div> 
+              
+
+
+<div class="modal-body" ng-show="states[2]">
+                 <h2 class="modal-title" id="myModalLabel_3">Address Details</h2>
+        
+       
+        <div class="popup_form">
+        <form>
+        <input type="hidden" id="lat"/>
+        <input type="hidden" id="lng"/>
+        <div   class="form-group">
+        <input type="text" class="form-control" ng-model="task.name" placeholder="Customer Name">
+        </div>
+          
+          <div class="form-group">
+            <input type="email" class="form-control" ng-model="task.email" placeholder="Email">
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" class="form-control"ng-model="task.customer_contact" placeholder="Phone Number">
+          </div>
+          
+          
+           <div class="form-group">
+              <!--<input type="text" id="Autocomplete" class="form-control" ng-autocomplete ng-model="result2" details="details2" options="options2"/>-->
+              <my-google-autocomplete id="address"  name="address" ng-model="task.house_no" google-model="model.googleAddress"
+                on-select="onSelect($item)" autocomplete="off" required>
+              </my-google-autocomplete>
+            </div>
+
+
+            
+           <div class="form-group">
+            <input type="text" class="form-control" ng-model="task.landmark" placeholder="Address">
+          </div>
+           
+          <div class="form-group">
+           
+ <ng-map center="[40.74, -74.18]" default-style="false" ng-if="states[2]">
+
+<marker position="[40.74, -74.18]"  on-dragend="getLoc()" title="My Location" draggable="true" animation="Animation.BOUNCE"></marker>
+
+ </ng-map>
+               </div>
+          
+        </form>
+        </div>
+<!--//-->
+              </div>
+<!---->
+
+  <div class="modal-body" ng-show="states[3]">
+       <h4 class="modal_sub_title">Terms & Payments</h4>
+       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+       
+       <h4 class="modal_sub_title">Call Up Charges <span class="color">AED 200</span></h4>
+      </div>
+      <!---->
+
+
+       <div class="modal-body" ng-show="states[4]">
+       <h4 class="modal-title" id="myModalLabel_5">THANK YOU! </h4>
+       <p>Your order has been placed, one of our representative will get in touch with you shortly. </p>
+      <p>feel free to call at <span class="color">555-444-333.</span> </p>
+      </div>
+              <!---->
+                  <div class="modal-footer">
+
+<div class="inner_read_more left_more modal_btn_1" ng-show="show">
+              <a class="showSingle_1 btn_back_popup" ng-click="prev()" >Back <i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+            </div>
+
+<div class="inner_read_more modal_btn_1" ng-show="show">
+              <a class="showSingle_1 btn_back_next"   ng-click="next()" >Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+                </div>
+                 </div>
+                  </div>
+                   </div>
+              </script>
+<!--
+//-->
+<script src="js/jquery-1.10.2.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/holder.js"></script> 
+<script src="js/jss/wow.js"></script> 
+<script src="js/jss/wow.min.js"></script> 
+<script src="js/jss/owl.carousel.js"></script> 
+<script>
+new WOW().init();
+</script> 
+<script>
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+            if (scroll >= 500)
+	{  
+        $('.header_nav').addClass("sticky");
+    }
+    else{
+        $('.header_nav').removeClass("sticky");
+    }
+});
+</script> 
+<script>
+  $(function() {
+    $('a[href="#"]:not([id="myCarousel"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+</script> 
+<script>
+
+$(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();      
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
+</script> 
+<script>
+$(document).ready(function() {
+ 
+  $("#testi").owlCarousel({
+ 
+    items : 3,
+        itemsCustom : false,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [980,2],
+        itemsTablet: [768,1],
+        itemsTabletSmall: false,
+        itemsMobile : [479,1],
+        singleItem : false,
+        itemsScaleUp : false,
+        mouseDrag   :   true,
+		pagination : false
+ 
+  
+ 
+  });
+ 
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+
+
+
+
+
+
+
+
+	<!-- END chat Sidebar-->
+
+
+	<div class="content-wrap">
+		<div class="main">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-8 p-0">
+						<div class="page-header">
+							<div class="page-title">
+								<h1>Dashboard 1</h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 p-0">
+						<div class="page-header">
+							<div class="page-title">
+								<ol class="breadcrumb text-right">
+									<li><a href="#">Dashboard</a></li>
+									<li><a href="#">Table</a></li>
+									<li class="active">Data Table</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main-content">
+					<div class="row">
+						<div class="col-lg-10 pull-right">
+							<div class="card alert">
+								<div class="card-header">
+									<h4>Employee Type</h4>
+									<div class="card-header-right-icon">
+										<ul>
+											<li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+											<li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								<!--start here-->
+								<div class="bootstrap-data-table-panel" ng-app="employeeTypeModule" ng-controller="ViewEmployeeType">
+									<table datatable="ng" dt-options="dtOptions">
+										<thead>
+											<tr>
+												<th>S. No.</th>
+												<th>Name</th>
+												<th>Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="user in users">
+												<td>{{user.id}}</td>
+												<td>{{user.name}}</td>
+												<td><button ng-click="delete(user.id)" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-close"></i>delete</button>
+												<button ng-click="update(user.id)" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-close"></i>update</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--End here-->
+							</div>
+							<!-- /# card -->
+						</div>
+						<!-- /# column -->
+					</div>
+					<!-- /# row -->
+				</div>
+				<!-- /# main content -->
+			</div>
+			<!-- /# container-fluid -->
+		</div>
+		<!-- /# main -->
+	</div>
+	<!-- /# content wrap -->

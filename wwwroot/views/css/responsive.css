@@ -1,0 +1,402 @@
+@media only screen and (max-width : 1191px) {
+.inner_box_high_quality {
+    border-right: 1px solid hsla(0, 0%, 58%, 0.3);
+    display: inline-block;
+    padding-left: 0;
+    width: auto;
+}
+.inner_box_high_quality h3 {
+    font-size: 14px;
+}
+.inner_box_high_quality p {
+    color: #646464;
+    font-size: 13px;
+    margin-top: 7px;
+}
+.img_quality {
+    width: 50px;
+}
+h3.block_title {
+    font-size: 18px;
+}
+.welcome_section h2 {
+    font-size: 29px;
+}
+.welcome_section p {
+    font-size: 14px;
+}
+.left_bar {
+    float: left;
+    height: auto;
+    width: 60px;
+    position: absolute;
+    top: 0;
+}
+.left_bar ul li {
+    padding: 9px 0;
+}
+.foot_info a {
+    font-size: 16px;
+}
+.owl-buttons {
+    top: auto;
+    bottom: 0;
+}
+.search_form p {
+    font-size: 13px;
+}
+	
+}
+
+@media only screen and (max-width : 991px) {
+	
+.banner_content h1 {
+    font-size: 40px;
+}
+.banner_content h2 {
+    margin: 10px 0;
+    font-size: 26px;
+}
+.inner_box_high_quality {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.img_quality {
+    min-height: auto;
+	display:none;
+}
+.inner_box_high_quality p {
+    line-height: 17px;
+}
+.service_block h2 {
+    font-size: 25px;
+}
+h3.block_title {
+    font-size: 13px;
+}
+.blog_section h2 {
+    font-size: 29px;
+}
+.left_bar ul li {
+    padding: 6px 0;
+}
+
+li.doc .fa {
+    font-size: 20px;
+}
+.left_bar ul li h4 {
+    font-size: 20px;
+}
+.left_bar ul li strong {
+    font-size: 13px;
+}
+li.comment .fa {
+    color: #fff;
+    font-size: 15px;
+}
+.left_bar {
+    background: #fff none repeat scroll 0 0;
+}
+.left_bar ul {
+    margin: 0;
+}
+.stats h2 {
+    font-size: 25px;
+}
+.foot_info .col-md-4 {
+    margin-bottom: 31px;
+}
+.foot_info a {
+    font-size: 21px;
+}
+.newsletter p {
+    color: #fff;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.service_block_content h3 {
+    font-size: 14px;
+    color: #221f1f;
+    font-family: 'Roboto', sans-serif;
+}
+
+.service_block_content p {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 17px;
+    color: #221f1f;
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner_section_btn {
+    margin: 0px 0 0 0px;
+}
+
+.banner_section_btn a {
+    color: #555555;
+    font-size: 13px;
+    background-color: #fff;
+    padding: 13px 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition-duration: .5s;
+}
+	
+}
+
+
+@media only screen and (max-width : 767px) {
+.blog_content a {
+    display: inline-block;
+    margin: 0 0 12px;
+    width: 113px;
+}
+.navbar-toggle {
+    background: #f85a10;
+	top: 30px;
+}
+.nav.navbar-nav.pull-right {
+    float: none !important;
+    width: 100%;
+}
+.nav.navbar-nav li {
+    float: none !important;
+    width: 100%;
+	display: inline-block;
+}
+a.navbar-brand {
+    padding: 0 0 0 10px;
+}
+.inner_box_high_quality {
+    border: 0 none;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.qualiy_text {
+    float: left;
+    width: 100%;
+}
+.foot_info .col-md-4 {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+#testi .owl-buttons {
+    bottom: 0 !important;
+	top: auto;
+}
+h3.block_title {
+    font-size: 22px;
+}
+.bg_opacity {
+    width: 100%;
+}
+.left_bar {
+    float: left;
+    height: auto;
+    margin: 0 7px 0 0;
+    position: static;
+    width: 60px;
+}
+.testimonial_section h2 {
+    color: #221f1f;
+    font-size: 25px;
+    font-weight: 400;
+}
+#testi p {
+    color: #221f1f;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0;
+}
+.stats h2 {
+    font-size: 19px;
+}
+.stats p {
+    color: #919191;
+    font-size: 12px;
+}
+.inner_banner_section img {
+    min-height: 150px;
+}
+.aboutus-quickfix {
+    padding: 0px 0 30px;
+}
+.about-us-left {
+    padding: 30px 0 0;
+}
+.about-us-left h2, .why-choose-left h2, .meet-team h2 {
+    font-size: 25px;
+    line-height: 34px;
+}
+p,
+.services-disc p {
+    font-size: 14px;
+    line-height: 22px;
+}
+.about-services p {
+    color: #fff;
+}
+.why-choose {
+    padding: 20px 0;
+    background: #f1f2f2;
+}
+.about-us-right {
+    margin: 30px 0 0;
+}
+.breadcrumb-wrapper h2 {
+    font-size: 15px;
+    line-height: 24px;
+    padding: 0 0 0 15px;
+}
+.breadcrumb {
+    padding: 3px 16px 0 0;
+    width: 58%;
+}
+.breadcrumb > li a,
+.breadcrumb > .active {
+    font-size: 13px;
+    line-height: 20px;
+}
+.services-disc h3,
+.our-blog .services-disc h3 {
+    font-size: 22px;
+    line-height: 30px;
+}
+a.services-read-more {
+    font-size: 13px;
+    line-height: 20px;
+    padding: 7px 15px;
+}
+.services {
+    margin: 0 0 30px;
+}
+.our-services .row {
+    margin: 0;
+}
+span.like, span.comment, span.date {
+    padding: 0 8px 0 20px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #939598;
+}
+.post-content {
+    padding-left: 15px;
+    margin-top: 12px;
+}
+.contact-disc {
+    padding: 20px 14% 0px;
+	    margin: 0 0 30px;
+		    background-size: contain;
+}
+.contact-map iframe {
+    height: 300px;
+}
+.contact-form h3 {
+    font-size: 22px;
+    line-height: 30px;
+    margin: 20px 0 0;
+}
+.contact-form .btn {
+    padding: 0px 22px;
+    font-size: 15px;
+    line-height: 40px;
+}
+.contact-disc h2 {
+    font-size: 20px;
+    line-height: 25px;
+}
+.contact-disc h4 {
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+}
+.contact-disc h3 {
+    font-size: 14px;
+    line-height: 22px;
+}
+.social-icons h4 {
+    margin: 0 0 8px;
+}
+}
+
+@media only screen and (max-width : 585px) {
+	
+.stats h2 {
+    font-size: 19px;
+}
+.stats p {
+    color: #919191;
+    font-size: 11px;
+	margin-bottom: 10px;
+}
+.banner_content h2 {
+    font-size: 17px;
+    margin: 10px 0;
+}
+.search_form select {
+    margin-bottom: 10px;
+}
+.banner_content h1 {
+    font-size: 30px;
+}
+.banner_content {
+    padding: 20px 0;
+}
+
+	
+}
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+.contact-disc {
+    padding: 20px 30% 180px;
+    margin: 0 0 30px;
+    background-size: contain;
+}
+.about-us-right img,
+.why-choose-right img,
+.team-photos {
+    width: 50%;
+    margin: 10px auto 0;
+    display: block;
+}
+}
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 320px) {
+	.contact-disc {
+    padding: 12px 14% 0px;
+    background-size: contain;
+    min-height: 305px;
+}
+.contact-disc h2 {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0 0 5px;
+}
+.contact-disc h4 {
+    font-size: 11px;
+	    margin: 0 0 3px;
+		    line-height: 16px;
+}
+.contact-disc h3 {
+    font-size: 13px;
+	    margin: 0 0 5px;
+		line-height: 16px;
+}
+.social-icons h4 {
+    margin: 0 0 2px;
+}
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
+
+	
+}

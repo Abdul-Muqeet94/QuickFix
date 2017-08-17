@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 p-0">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Add Feature</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 p-0">
+            <div class="page-header">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">Dashboard</a></li>
+                        <li class="active">Update Services Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card alert">
+                    <div class="card-header">
+                        <div class="card-header-right-icon">
+                            <ul>
+                                <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
+                                <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form ng-submit="update()">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" ng-model="service.name" class="form-control input-default " placeholder="Input Default">
+                                </div>
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text" ng-model="service.description" class="form-control input-default " placeholder="Input Default">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <div class="col-sm-10">
+                                            <select name="multipleSelect" id="multipleSelect" ng-model="data.multipleSelect" multiple>
+                                             <option   ng-repeat="fea in features" value="{{fea.id}}" ng-selected="fea.id == service.feature[getFeatureIndex($index)].id">{{fea.name}}</option>
+                
+                                             </select>
+                                             </div> -->
+                                    <div class="row">
+                                        <div ng-repeat="fea in features" class="col-md-3" flex="50">
+                                            <label class="checkbox_label">
+                <input type="checkbox" ng-checked="exists(fea.id, selected)"
+                       ng-click="toggle(fea.id, selected)"/>
+                {{ fea.name }}
+              </label>
+                                        </div>
+            
+                                    </div>
+                                    <!-- <code style="display: block; padding: 8px;">{{selected | json}}</code> -->
+                                </div>
+                                <button type="submit" class="btn btn-primary button_create">Create</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /# column -->
+        </div>
+        <!-- /# row -->
+
+    </div>
+    <!-- /# main content -->
+</div>
