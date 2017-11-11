@@ -9,7 +9,7 @@
         $scope.save = function () {
 
             console.log($scope.cms);
-            $scope.message = $http.post('http://localhost:5000/api/cms/create', $scope.cms).
+            $scope.message = $http.post('https://testing.danishtest.ml/api/cms/create/', $scope.cms).
                 then(function (response) {
                     console.log(response.data);
 
@@ -24,7 +24,7 @@
 $scope.dtOptions = DTOptionsBuilder.newOptions()
             .withDisplayLength(10)
             .withOption('bLengthChange', false);
-            $scope.message = $http.post('http://localhost:5000/api/cms/view', 0).
+            $scope.message = $http.post('https://testing.danishtest.ml/api/cms/view/', 0).
                 then(function (response) {
                     $scope.cmss=response.data;
                     console.log(response.cmss);
@@ -32,7 +32,7 @@ $scope.dtOptions = DTOptionsBuilder.newOptions()
                 });
 
                  $scope.delete=function(val){
-             $scope.message = $http.post('http://localhost:5000/api/cms/delete',val).
+             $scope.message = $http.post('https://testing.danishtest.ml/api/cms/delete/',val).
                 then(function (response) {
                     console.log(response.data);
 
@@ -48,7 +48,7 @@ $scope.dtOptions = DTOptionsBuilder.newOptions()
 
        app.controller("updateCms", function ($scope, $http, $log,$location,$rootScope) {
 
-         $scope.message = $http.post('http://localhost:5000/api/cms/view',$rootScope.cmsId).
+         $scope.message = $http.post('https://testing.danishtest.ml/api/cms/view/',$rootScope.cmsId).
                 then(function (response) {
                     $scope.cms=response.data[0];
                     console.log($scope.cms);
@@ -57,7 +57,7 @@ $scope.dtOptions = DTOptionsBuilder.newOptions()
 
 
                 $scope.update=function(){
-                    $scope.message = $http.post('http://testing.danishtest.ml/api/cms/edit',$scope.cms).
+                    $scope.message = $http.post('https://testing.danishtest.ml/api/cms/edit',$scope.cms).
                 then(function (response) {
                     $scope.result=response.data;
                     console.log($scope.result);

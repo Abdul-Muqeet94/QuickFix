@@ -1,6 +1,6 @@
 
 (function () {
-    var app = angular.module("mainModule", ['ngRoute','angularjs-datetime-picker','contactUsModule','reportModule','cmsModule', 'taskModule', 'featureModule', 'datatableModule','shiftModule', 'serviceModule', 'ng-weekday-selector', 'employeeModule']);
+    var app = angular.module("mainModule", ['ngRoute','quoteModule','angularjs-datetime-picker','contactUsModule','reportModule','cmsModule', 'taskModule', 'featureModule', 'datatableModule','shiftModule', 'serviceModule', 'ng-weekday-selector', 'employeeModule','angularModalService']);
 
     app.run(function ($rootScope) {
         $rootScope.taskId = 0;
@@ -10,10 +10,15 @@
         $rootScope.serviceId = 0;
         $rootScope.sendEmail = false;
         $rootScope.cmsId=0;
+        $rootScope.contactView=0;
     });
 
     app.config(function ($routeProvider) {
         $routeProvider
+         .when("/", {
+                  controller: "datatableController",
+                templateUrl: "../views/viewemployee.html"
+         })
             .when("/shift", {
                 controller: "cshiftController",
                 templateUrl: "../views/cshift.html"
@@ -107,6 +112,9 @@
                 //viewTask
                 controller: "viewCancelledTask",
                 templateUrl: "../views/viewCancelledOrder.html"
+            }).when("/contactView", {
+                controller: "viewInnerContact",
+                templateUrl: "../views/contactUsInnerView.html"
             })
 
 ///cancelledorder

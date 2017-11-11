@@ -33,7 +33,7 @@ namespace Fixit.BLL
                     task.customer_contact = req.customer_contact;
                     task.date = req.date;
                     task.enable = true;
-                    task.callUpCharges=200;
+                    task.callUpCharges=0;
                     task.name=req.name;
                     task.shift=req.shift;
                     task.paymentStatus=req.paymentStatus;
@@ -296,12 +296,23 @@ namespace Fixit.BLL
                         todo=false;
                         continue;
                     }
-                    
-                    service.id=entity.selectedservice.id;
+                    if(entity.selectedservice!=null)
+                    {
+                        service.id=entity.selectedservice.id;
                     service.name=entity.selectedservice.name;
                     service.description=entity.selectedservice.description;
-                    res.selected_shift=entity.selected_shift;
-                    foreach(var feature in entity.selected_features)
+                    }
+                    else{
+                        service.id=0;
+                    service.name="";
+                    service.description="";
+                    }
+                    if(entity.selected_shift!=null){
+                        res.selected_shift=entity.selected_shift;
+                    }
+                    if(entity.selected_features!=null)
+                    {
+                        foreach(var feature in entity.selected_features)
                     {
                         FeatureRes features=new FeatureRes();
                         features.id=feature.features.id;
@@ -309,9 +320,13 @@ namespace Fixit.BLL
                         features.description=feature.features.description;
                         service.feature.Add(features);
                     }
-                    res.selected_shift=entity.selected_shift;
-                    
-                    
+
+                    }
+                    if(entity.selected_features!=null)
+                    {
+                        res.selected_shift=entity.selected_shift;
+                    }
+
                    res.selected_features.Add(service);
                     
                 }
@@ -321,26 +336,36 @@ namespace Fixit.BLL
                 if(getTsk[i].location!=null)
                 {
                     words= getTsk[i].location.Split(',');
+                     res.lat=words[0];
+                    res.longg=words[1];
+                }
+                else{
+                    res.lat="";
+                    res.longg="";
                 }
                 
-                res.lat=words[0];
-                res.longg=words[1];
-                res.landmark = getTsk[i].landmark;
-                res.house_no = getTsk[i].house_no;
-                res.customer_contact = getTsk[i].customer_contact;
-                res.date = getTsk[i].date.ToString();
-                res.name=getTsk[i].name;
-                res.callUpCharges=getTsk[i].callUpCharges;
-                res.shift=getTsk[i].shift;
+               
+                res.landmark = (getTsk[i].landmark!=null)?getTsk[i].landmark:"";
+                res.house_no = (getTsk[i].house_no!=null)?getTsk[i].house_no:"";
+                res.customer_contact = (getTsk[i].customer_contact!=null)?getTsk[i].customer_contact:"";
+                res.date = (getTsk[i].date.ToString()!=null)?getTsk[i].date.ToString():"";
+                res.name=(getTsk[i].name!=null)?getTsk[i].name:"";
+                res.callUpCharges=(getTsk[i].callUpCharges!=0)?getTsk[i].callUpCharges:0;
+                res.shift=(getTsk[i].shift!=null)?getTsk[i].shift:"";
                 res.paymentStatus=(getTsk[i].paymentStatus==0)?"Un Paid":"Paid";
                 res.complete=(getTsk[i].complete==0)?"InComplete":"Completed";
-                res.email=getTsk[i].email;
-                res.comments=getTsk[i].comments;
-                res.image=getTsk[i].image;
+                res.email=(getTsk[i].email!=null)?getTsk[i].email:"";
+                res.comments=(getTsk[i].comments!=null)?getTsk[i].comments:"";
+                res.image=(getTsk[i].image!=null)?getTsk[i].image:"";
                 toReturn.Add(res);
                 }
 
             }
+            if(toReturn.Count>0)
+            {
+                toReturn[0].count=toReturn.Count;
+            }
+            
             return toReturn;
         }
 
@@ -351,6 +376,7 @@ public BaseResponse completeTask(CompleteTaskReq req)
     var task=db.tasks.Where(m=>m.enable==true && m.id==req.id).FirstOrDefault();
     task.complete=1;
     task.comments=req.comments;
+    task.callUpCharges=req.amount;
     if(db.SaveChanges()>0)
     {
         toReturn.developerMessage="Task Completed Successfully";
@@ -448,7 +474,15 @@ public BaseResponse cancelTask(CompleteTaskReq req)
                         features.description=feature.features.description;
                         service.feature.Add(features);
                     }
-                    res.selected_shift=entity.selected_shift;
+                    if(entity.selected_shift!=null)
+                    {
+                        res.selected_shift=entity.selected_shift;
+                    }
+                    else
+                    {
+                        res.selected_shift=new Models.Shifts();
+                    }
+                    
                     
                     
                    res.selected_features.Add(service);
@@ -460,10 +494,15 @@ public BaseResponse cancelTask(CompleteTaskReq req)
                 if(getTsk[i].location!=null)
                 {
                     words= getTsk[i].location.Split(',');
+                    res.lat=words[0];
+                res.longg=words[1];
+                }
+                else{
+                    res.lat="";
+                res.longg="";
                 }
                 
-                res.lat=words[0];
-                res.longg=words[1];
+                
                 res.email=getTsk[i].email;
                 res.landmark = getTsk[i].landmark;
                 res.house_no = getTsk[i].house_no;
@@ -550,8 +589,14 @@ public BaseResponse cancelTask(CompleteTaskReq req)
                         features.description=feature.features.description;
                         service.feature.Add(features);
                     }
-                    res.selected_shift=entity.selected_shift;
-                    
+                    if(entity.selected_shift!=null)
+                    {
+                        res.selected_shift=entity.selected_shift;
+                    }
+                    else
+                    {
+                        res.selected_shift=new Models.Shifts();
+                    }
                     
                    res.selected_features.Add(service);
                     
@@ -562,10 +607,14 @@ public BaseResponse cancelTask(CompleteTaskReq req)
                 if(getTsk[i].location!=null)
                 {
                     words= getTsk[i].location.Split(',');
-                }
-                
-                res.lat=words[0];
+                     res.lat=words[0];
                 res.longg=words[1];
+                }
+                else{
+                    res.lat="";
+                res.longg="";
+                }
+               
                 res.email=getTsk[i].email;
                 res.landmark = getTsk[i].landmark;
                 res.house_no = getTsk[i].house_no;
@@ -747,17 +796,8 @@ public BaseResponse cancelTask(CompleteTaskReq req)
                     service.id=entity.selectedservice.id;
                     service.name=entity.selectedservice.name;
                     service.description=entity.selectedservice.description;
-                    if(res.shift!=null)
-                    {
-                         res.shiftId=entity.selected_shift.id;
+                    res.shiftId=entity.selected_shift.id;
                     res.shift=entity.selected_shift.sTime.TimeOfDay+" "+entity.selected_shift.eTime.TimeOfDay;
-                    }
-                    else
-                    {
-                        res.shiftId=0;
-                        res.shift=new Shifts();
-                    }
-                   
                     foreach(var feature in entity.selected_features)
                     {
                         FeatureRes features=new FeatureRes();
@@ -876,10 +916,27 @@ public BaseResponse cancelTask(CompleteTaskReq req)
         }
 
 
+public BaseResponse sendQuote(QuoteReq req)
+{
+    BaseResponse toReturn=new BaseResponse();
 
 
-        //
-
+//create an html page
+ 
+var body = "Address:</h3><h4>"+req.address+"</h4><h3>Services:</h3><h4>"+req.service+"</h4><h3>Amount:</h3><h4>"+req.amount+"</h4><h3>Message:</h3><h4>"+req.message+"</h4></body></html>";
+var name="Quick-Fix";
+    if(Utils.Email.sendEmail(name,body,req.sendTo))
+    {
+        toReturn.developerMessage="Quatation send success";
+        toReturn.status=1;
+    }
+    else
+    {
+        toReturn.developerMessage="Unable to send Quatation";
+        toReturn.status=2;
+    }
+    return toReturn;
+}
 
 
          public BaseResponse sendEmail(EmailReq req){
@@ -896,7 +953,7 @@ public BaseResponse cancelTask(CompleteTaskReq req)
             else
             {
                string body=req.email;
-            string to=employee[i].email;
+              string to=employee[i].email;
             //string to="abdul.muqeet@khi.iba.edu.pk";//employee.email;
             string from="Quick Fix";
             if(Utils.Email.sendEmail(from,body,to))

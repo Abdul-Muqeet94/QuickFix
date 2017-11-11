@@ -8,7 +8,7 @@
         $scope.options=["AC Service & Repair","CCTV Camera","Marble Tiles & Sanitary","Electrician","House Painters","Aluminum & Glass Work","Carpenter",
     "Drilling & Hanging","Ceiling","Plumbing","Bathroom Deep Cleaning"];
         $scope.selected = [];
-        $http.post('http://localhost:5000/api/feature/view', 0)
+        $http.post('https://testing.danishtest.ml/api/feature/view/', 0)
             .then(function (response) {
                 $scope.features = response.data;
                 console.log($scope.features);
@@ -29,7 +29,7 @@
         $scope.save = function () {
             $scope.service.features = $scope.selected;
             console.log($scope.service);
-            $scope.message = $http.post('http://localhost:5000/api/service/create', $scope.service).
+            $scope.message = $http.post('https://testing.danishtest.ml/api/service/create/', $scope.service).
                 then(function (response) {
                     console.log(response.data);
                     swal({
@@ -54,13 +54,13 @@
 
     app.controller("updateService", function ($scope, $http, $log, $rootScope, $location) {
         $scope.selected=[];
-        $http.post('http://localhost:5000/api/feature/view', 0)
+        $http.post('https://testing.danishtest.ml/api/feature/view/', 0)
             .then(function (response) {
                 $scope.features = response.data;
                 console.log($scope.features);
             });
 
-        $http.post('http://localhost:5000/api/service/view', $rootScope.serviceId)
+        $http.post('https://testing.danishtest.ml/api/service/view/', $rootScope.serviceId)
             .then(function (response) {
                 $scope.service = response.data[0];
                 console.log($scope.service.feature);
@@ -86,7 +86,7 @@
         $scope.update = function () {
             $scope.service.features=$scope.selected;
             console.log($scope.service);
-            $http.post('http://localhost:5000/api/service/edit', $scope.service)
+            $http.post('https://testing.danishtest.ml/api/service/edit/', $scope.service)
                 .then(function (response) {
                     $scope.result = response.data;
                     console.log($scope.result);

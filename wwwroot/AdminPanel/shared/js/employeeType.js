@@ -9,7 +9,7 @@
                 $scope.save = function () {
             
             console.log($scope.emp);
-            $scope.message = $http.post('http://localhost:5000/api/employeetype/create', $scope.emp).
+            $scope.message = $http.post('https://testing.danishtest.ml/api/employeetype/create/', $scope.emp).
             then(function (response) {
               console.log(response.data);
               
@@ -26,7 +26,7 @@
         .withDisplayLength(10)
         .withOption('bLengthChange', false);
 
-    $http.post('http://localhost:5000/api/employeetype/view', 0)
+    $http.post('https://testing.danishtest.ml/api/employeetype/view/', 0)
         .then(function (response) {
             $scope.users = response.data;
             console.log($scope.users);
@@ -35,7 +35,7 @@
     $scope.delete = function (val) {
         //  console.log(index);
 
-        $scope.message = $http.post('http://localhost:5000/api/employeetype/delete', val).
+        $scope.message = $http.post('https://testing.danishtest.ml/api/employeetype/delete/', val).
             then(function (response) {
                 $scope.model = response.data;
                 console.log($scope.model);
@@ -47,7 +47,7 @@
 
 
     $scope.update = function (data) {
-        $scope.message = $http.post('http://localhost:5000/api/employee/view', data).
+        $scope.message = $http.post('https://testing.danishtest.ml/api/employee/view/', data).
             then(function (response) {
                 $scope.userEdit = response.data;
                 $rootScope.emp = $scope.userEdit[0].id;

@@ -5,19 +5,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8 p-0">
-            <div class="page-header">
-                <div class="page-title">
-                    <!--<h1>Assign Order</h1>-->
-                </div>
-            </div>
+          
         </div>
         <div class="col-lg-4 p-0">
             <div class="page-header">
                 <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Assign Order</a></li>
-                    </ol>
+                   
                 </div>
             </div>
         </div>
@@ -32,20 +25,7 @@
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <!--<div class="card-header-right-icon">
-                                                    <ul>
-                                                        <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
-                                                        <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
-                                                            <ul class="card-option-dropdown dropdown-menu">
-                                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
-                                                    </ul>
-                                                </div>-->
+                                
                                 </div>
                                 <div class="card-body">
                                     <div class="col-lg-12">
@@ -105,22 +85,10 @@
                                                 <h4 class="sub_heading">Assign Order</h4>
                                                 <br>
 
-                                                <!--<div class="form-group">
-                                                        <label for="singleSelect"> Select Employee for {{service.name}}: </label><br>
-                                                        <select name="singleSelect" id="singleSelect" ng-model="service_employee.employeeId">
-                                                 <option  value="" disabled>Please select an option</option>
-                                              <option ng-repeat="emp in task.selected_features[0].assigned_employee"  value="{{emp.id}}">{{emp.name}}</option> 
-                                             </select>
-                                                    </div>-->
-
                                                 <!--new work from -->
                                                 <div class="form-group">
 
-                                                     <!-- <label for="singleSelect"> Select Services: </label><br>
-                                                        <select name="multipleSelect" id="multipleSelect" ng-model="data.multipleSelect" multiple>
-                                             <option ng-repeat="emp in task.selected_features[0].assigned_employee" value="{{emp.id}}">{{emp.name}}</option>
-                
-                                             </select>  -->
+                                               
 
 
                                                     <div class="row">
@@ -158,11 +126,13 @@
                                             <div class="col-lg-6">
                                                 <img data-ng-src="{{getImage(task.image)}}" height="200dp" width="200dp" />
                                             </div>
+                                            
                                             <button style="float:left; clear:both; margin-left:15px;" id="buttonSave" type="Assign" class="btn_pri_2 btn btn-primary">Assign</button>
-
-
+                                            
                                         </form>
-                                        <button style="float:left; clear:both; margin-left:15px;" ng-click="cancelledOrder()" class="btn_pri_2 btn btn-primary">Cancell Order</button>
+                                        <div class="col-md-4">
+                                        <button style="float:left; clear:both; margin-left:15px;" ng-click="cancelledOrder()" class="btn_pri_2 btn btn-primary">Cancel Order</button>
+                                   </div>
                                     </div>
                                 </div>
                             </div>

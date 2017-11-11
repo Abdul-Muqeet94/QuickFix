@@ -56,7 +56,7 @@
     cursor: pointer;
 }
 .angular-date-picker > ._days > ._day.-selected {
-    background: #9efd01;
+    background: orangered;
 }
 .angular-date-picker > ._days > ._day.-today {
     border-color: #aaa;

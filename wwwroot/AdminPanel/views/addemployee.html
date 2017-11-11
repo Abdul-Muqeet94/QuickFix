@@ -1,11 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8 p-0">
-            <div class="page-header">
-                <div class="page-title">
-                    <h1>Add Employee</h1>
-                </div>
-            </div>
+
         </div>
         <div class="col-lg-4 p-0">
             <div class="page-header">
@@ -71,42 +67,56 @@
                                             <input type="text" ng-model="emp.nationality" class="form-control input-default " placeholder="Input Default">
                                         </div>
                                         <div class="form-group">
-                                           
-                                            <!-- <label for="singleSelect"> Select Services: </label><br>            
-                                              <select name="multipleSelect" id="multipleSelect" ng-model="data.multipleSelect" multiple>
-                                             <option ng-repeat="service in services" value="{{service.id}}">{{service.name}}</option>
-                
-                                             </select> -->
 
-                                              <!-- <input type="checkbox" ng-repeat="service in services" ng-checked="exists(service.id, selected)" ng-click="toggle(service.id, selected)">
-                                                 <span ng-if="exists(service.id, selected)">selected</span> {{service.name}} </input> -->
-                           
-                         <h1>Select Service </h1>       
-                         <div class="clearfix"></div>               
-                         <div ng-repeat="service in services" class="standard" flex="50">
-              <label class="checkbox_label">
+
+
+                                            <h1>Select Service </h1>
+                                            <div class="clearfix"></div>
+                                            <div ng-repeat="service in services" class="standard" flex="50">
+                                                <label class="checkbox_label">
                 <input type="checkbox"  ng-checked="exists(service.id, selected)"
                        ng-click="toggle(service.id, selected)"/>
                 {{ service.name }}
               </label>
-            </div>
-                      <!-- <code style="display: block; padding: 8px;">{{selected | json}}</code>     -->
-                        
-                        </div>
-                     <div class="clearfix"></div>   
-                        <div class="form-group">
-                             <h1>Select Shifts </h1>       
-                         <div class="clearfix"></div>               
-                         <div ng-repeat="shift in shifts" class="standard" flex="50">
-              <label class="checkbox_label">
+                                            </div>
+                                            <!-- <code style="display: block; padding: 8px;">{{selected | json}}</code>     -->
+
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <h1>Select Shifts </h1>
+                                            <div class="clearfix"></div>
+                                            <div ng-repeat="shift in shifts" class="standard" flex="50">
+                                                <label class="checkbox_label">
                 <input type="checkbox"  ng-checked="existsShift(shift.id, selectedShift)"
                        ng-click="toggleShift(shift.id, selectedShift)"/>
                 {{ shift.name }}
               </label>
-            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                                        <button  type="submit" class="btn btn-primary button_create">Create</button>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="form-group">
+                                            <h1>Select Skill </h1>
+                                            <div class="clearfix"></div>
+                                            <label>
+    <input type="radio" ng-model="selectedSkill" value="Beginner">
+    Beginner
+  </label><br/>
+                                            <label>
+    <input type="radio" ng-model="selectedSkill" ng-value="Intermediate">
+    Intermediate
+  </label><br/>
+                                            <label>
+    <input type="radio" ng-model="selectedSkill" value="Expert">
+    Expert
+  </label><br/>
+                                        </div>
+
+
+
+
+                                        <div class="clearfix"></div>
+                                        <button type="submit" class="btn btn-primary button_create">Add Employee</button>
                             </form>
                             </div>
                             </div>

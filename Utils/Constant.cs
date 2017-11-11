@@ -26,9 +26,7 @@ namespace Fixit.Utils
         public const string MAIL_AUTHENTICAITON_USER = "M.Fahad2015@outlook.com";
         public const string MAIL_AUTHENTICATION_PASSWORD = "king0341";
 
-
     }
-
 
      public class Passwords
         {

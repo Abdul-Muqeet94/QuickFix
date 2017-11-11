@@ -8,7 +8,7 @@
                 $scope.save = function () {
             
             console.log($scope.feature);
-            $scope.message = $http.post('http://localhost:5000/api/feature/create', $scope.feature).
+            $scope.message = $http.post('https://testing.danishtest.ml/api/feature/create/', $scope.feature).
             then(function (response) {
               console.log(response.data);
               swal({
@@ -32,14 +32,14 @@
     });
  app.controller("updateFeature", function ($scope, $http, $log,$rootScope,$location) {
 
-     $scope.message = $http.post('http://localhost:5000/api/feature/view', $rootScope.featureId).
+     $scope.message = $http.post('https://testing.danishtest.ml/api/feature/view/', $rootScope.featureId).
             then(function (response) {
                 $scope.feature=response.data[0];
                 console.log($scope.feature);
                 // 
             });
             $scope.update=function(){
-                 $scope.message = $http.post('http://localhost:5000/api/feature/edit', $scope.feature).
+                 $scope.message = $http.post('https://testing.danishtest.ml/api/feature/edit/', $scope.feature).
             then(function (response) {
                 $scope.feature=response.data;
                 console.log($scope.feature);

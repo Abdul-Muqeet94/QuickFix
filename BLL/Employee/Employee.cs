@@ -29,6 +29,7 @@ namespace Fixit.BLL
                     nationality=req.nationality,
                     address=req.address,
                     status=req.status,
+                    skill=req.skill,
                     enable=true
                 };
                 db.employee.Add(emp);
@@ -83,6 +84,7 @@ namespace Fixit.BLL
             employee.nationality = req.nationality;
             employee.address=req.address;
             employee.status = req.status;
+            employee.skill=req.skill;
             employee.service.Clear();
             var toRemoveServices=db.employeeService.Where(m=>m.employee==employee).ToList();
             db.employeeService.RemoveRange(toRemoveServices);
@@ -144,6 +146,7 @@ namespace Fixit.BLL
                     code=entity.code,
                     contactNo=entity.contactNo,
                     emiratesId=entity.emiratesId,
+                    skill=entity.skill
                 });
             }
             return toReturn;
@@ -193,6 +196,7 @@ namespace Fixit.BLL
                 res.nationality=getEmp[i].nationality;
                 res.enable=getEmp[i].enable;
                 res.address=getEmp[i].address;
+                res.skill=getEmp[i].skill;
                 toReturn.Add(res) ;
                 
             }

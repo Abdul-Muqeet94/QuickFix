@@ -27,7 +27,7 @@ app.controller("cshiftController", function ($scope, $http, $rootScope,$location
         $scope.shift.days = $scope.selected;
 
         console.log($scope.shift);
-        $scope.message = $http.post('https://test.danishtest.ml/api/shift/create', $scope.shift).
+        $scope.message = $http.post('http://localhost:5000/api/shift/create/', $scope.shift).
             then(function (response) {
                 console.log(response.data);
                  swal({
@@ -53,7 +53,7 @@ app.controller("cshiftController", function ($scope, $http, $rootScope,$location
 });
 app.controller("vshiftController", function ($scope, $http,$route, $rootScope, $location) {
 
-    $scope.message = $http.post('http://localhost:5000/api/shift/view', 0).
+    $scope.message = $http.post('http://localhost:5000/api/shift/view/', 0).
         then(function (response) {
             $scope.shifts = response.data;
             $rootScope.shifts = response.data;
@@ -61,7 +61,7 @@ app.controller("vshiftController", function ($scope, $http,$route, $rootScope, $
             
         });
     $scope.delete = function (id) {
-        $scope.message = $http.post('http://localhost:5000/api/shift/delete', id).
+        $scope.message = $http.post('http://localhost:5000/api/shift/delete/', id).
             then(function (response) {
                 $route.reload();
                 var row = document.getElementById(id);
@@ -136,7 +136,7 @@ app.controller("updateShiftController", function ($scope, $http, $rootScope, $lo
     $scope.updateShift = function () {
         $scope.shifts.days = $scope.selected;
         console.log($scope.shifts);
-        $scope.message = $http.post('http://localhost:5000/api/shift/edit', $scope.shifts).
+        $scope.message = $http.post('http://localhost:5000/api/shift/edit/', $scope.shifts).
             then(function (response) {
                 console.log(response.data);
                 swal({

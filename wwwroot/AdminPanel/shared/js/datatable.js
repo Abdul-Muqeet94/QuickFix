@@ -10,7 +10,7 @@ app.controller("datatableController", function ($scope,$route, DTOptionsBuilder,
         .withDisplayLength(10)
         .withOption('bLengthChange', false);
 
-    $http.post('http://localhost:5000/api/employee/view', 0)
+    $http.post('https://testing.danishtest.ml/api/employee/view/', 0)
         .then(function (response) {
             $scope.users = response.data;
             console.log($scope.users);
@@ -19,7 +19,7 @@ app.controller("datatableController", function ($scope,$route, DTOptionsBuilder,
     $scope.delete = function (val) {
         //  console.log(index);
 
-        $scope.message = $http.post('http://localhost:5000/api/employee/delete', val).
+        $scope.message = $http.post('https://testing.danishtest.ml/api/employee/delete/', val).
             then(function (response) {
                 $scope.model = response.data;
                 console.log($scope.model);
@@ -64,7 +64,7 @@ app.controller("featureController", function ($scope, DTOptionsBuilder, $http,  
         .withDisplayLength(10)
         .withOption('bLengthChange', false);
 
-    $http.post('http://localhost:5000/api/feature/view', 0)
+    $http.post('https://testing.danishtest.ml/api/feature/view/', 0)
         .then(function (response) {
             $scope.features = response.data;
             console.log($scope.features);
@@ -73,7 +73,7 @@ app.controller("featureController", function ($scope, DTOptionsBuilder, $http,  
     $scope.delete = function (val) {
         //  console.log(index);
 
-        $scope.message = $http.post('http://localhost:5000/api/feature/delete', val).
+        $scope.message = $http.post('https://testing.danishtest.ml/api/feature/delete/', val).
             then(function (response) {
                 $scope.model = response.data;
                 console.log($scope.model);
@@ -118,7 +118,7 @@ app.controller("serviceController", function ($scope, DTOptionsBuilder, $route, 
         .withDisplayLength(10)
         .withOption('bLengthChange', false);
 
-    $http.post('http://localhost:5000/api/service/view', 0)
+    $http.post('https://testing.danishtest.ml/api/service/view', 0)
         .then(function (response) {
             $scope.services = response.data;
             console.log($scope.services);
@@ -127,7 +127,7 @@ app.controller("serviceController", function ($scope, DTOptionsBuilder, $route, 
     $scope.delete = function (val) {
         //  console.log(index);
 
-        $scope.message = $http.post('http://localhost:5000/api/service/delete', val).
+        $scope.message = $http.post('https://testing.danishtest.ml/api/service/delete', val).
             then(function (response) {
                 $scope.model = response.data;
                 console.log($scope.model);

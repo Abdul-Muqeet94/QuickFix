@@ -78,6 +78,8 @@ namespace Fixit.Migrations
 
                     b.Property<string>("nationality");
 
+                    b.Property<string>("skill");
+
                     b.Property<bool>("status");
 
                     b.HasKey("id");

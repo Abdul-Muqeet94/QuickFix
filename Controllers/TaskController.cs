@@ -36,6 +36,7 @@ namespace Fixit.Controllers
         {
             return new BLL.Task(_db).getAssignedTask(id);
         }
+        
         [Route("api/task/viewcompletedtask"), HttpPost]
         public List<TaskRes> viewCompletedTask([FromBody] int id)
         {
@@ -86,9 +87,12 @@ namespace Fixit.Controllers
         {
             return new BLL.Task(_db).sendEmail(req);
         }
+        [Route("api/task/quoteemail"), HttpPost]
+        public BaseResponse quoteEmail([FromBody] QuoteReq req)
+        {
+            return new BLL.Task(_db).sendQuote(req);
+        }
 
-        
-        // /api/task/sendemail 
     }
 
 }

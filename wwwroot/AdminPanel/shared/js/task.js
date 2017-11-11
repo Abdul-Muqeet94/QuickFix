@@ -30,6 +30,7 @@
     app.controller("viewTask", function ($scope, DTOptionsBuilder, $http, $rootScope, $location) {
 
         $scope.tasks = {};
+        $scope.taskCount=0;
         // DataTables configurable options
         $scope.dtOptions = DTOptionsBuilder.newOptions()
             .withDisplayLength(10)
@@ -38,6 +39,7 @@
         $http.post('http://localhost:5000/api/task/toassignview', 0)
             .then(function (response) {
                 $scope.tasks = response.data;
+                $scope.taskCount=$scope.tasks[0].count;
                 console.log($scope.tasks);
             });
 
@@ -82,7 +84,7 @@
         $scope.sendingEmail = function (val) {
             return $rootScope.sendEmail = val;
         };
-        $scope.completeScope = { id: 0, comments: "" };
+        $scope.completeScope = { id: 0, comments: "" ,amount:""};
         $scope.sendingEmail(false);
         $scope.createTask = { task_id: "", service_employee: [], comments: "" };
         $scope.service_employee = { serviceId: 0, employeeId: 0 };
@@ -400,7 +402,7 @@
         $scope.delete = function (val) {
             //  console.log(index);
 
-            $scope.message = $http.post('http://localhost:5000/api/task/delete', val).
+            $scope.message = $http.post('http://localhost:5000/api/task/delete/', val).
                 then(function (response) {
                     $scope.model = response.data;
                     console.log($scope.model);

@@ -3,15 +3,16 @@
 
 
     app.controller("homeController", function ($scope, $http, $location, $rootScope,ModalService) {
-        $scope.message = $http.post('https://testing.danishtest.ml/api/service/view', 0).
+        $scope.message = $http.post('http://localhost:5000/api/service/view', 0).
             then(function (response) {
                 $scope.services = response.data;
+                console.log($scope.services);
             });
-        $scope.message = $http.post('https://testing.danishtest.ml/api/cms/viewbypage', "'index'").
-            then(function (response) {
-                $scope.cms = response.data;
-                console.log($scope.cms);
-            });
+        // $scope.message = $http.post('http://localhost:5000/api/cms/viewbypage', "'index'").
+        //     then(function (response) {
+        //         $scope.cms = response.data;
+        //         console.log($scope.cms);
+        //     });
 
 
 $scope.fillForm=function(serviceName)
@@ -86,12 +87,6 @@ return;
 
 }
 
-//        $scope.places = ["Abu Dabi", "Ajman", "Dubai", "Sharjah"];
-        // $scope.myPlace="City";
-        
-        // $scope.$watch("selectedService", function (newValue, oldValue) {
-        //     // your code goes here...
-        //     if (newValue != oldValue) {
 $scope.BookNow= function()
 {
   ModalService.showModal({
@@ -110,17 +105,23 @@ $scope.book=function()
     $rootScope.email=$scope.email;
         var name = $scope.selectedService.originalObject.name;
 				$rootScope.permService=$scope.selectedService.originalObject.id;
-                if (name == "AC Service & Repair") {
+        $scope.bookByRef(name);
+}
+        
+        $scope.bookByRef=function(name)
+        {         
+                    if (name == "AC Service & Repair") {
+                        
                     $rootScope.service = $scope.selectedService.originalObject;
                     $rootScope.pageName = "AC Service & Repair";
-                 //   $location.path('/ac-repair');
+                 
                    $scope.BookNow();
                     return;
                 }
                 else if (name == "CCTV Camera") {
                     $rootScope.service = $scope.selectedService.originalObject;
                     $rootScope.pageName = "CCTV Camera";
-                  //  $location.path('/cctv-camera');
+                  
                         $scope.BookNow();
                     return;
                 }
@@ -181,18 +182,29 @@ $scope.book=function()
                  $scope.BookNow();   
              }
 
-}
-        
+        }
+
+         $scope.bookByRef1=function(ind)
+        {         
+  $scope.message = $http.post('http://localhost:5000/api/service/view', ind).
+            then(function (response) {
+               $rootScope.service=  response.data[0];
+                $rootScope.pageName=response.data[0].name;
+                $rootScope.permService=ind;
+$scope.BookNow();   
+         });
+   
+        }
+
+
         $scope.serviceClicked = function (name) {
             console.log(name);
-
             for (var i = 0; i < $scope.services.length; i++) {
                 console.log($scope.services[i].name);
                 if ($scope.services[i].name == name) {
 					$rootScope.permService=$scope.services[i].id;
                     $rootScope.service = $scope.services[i];
                     break;
-
                 }
             }
 

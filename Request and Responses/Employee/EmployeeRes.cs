@@ -23,6 +23,7 @@ namespace Fixit.Request_and_Responses.Employee
         public string nationality {get;set;}
         public bool status {get;set;}
         public bool enable {get;set;}
+        public string skill{get;set;}
         public List<ServiceRes> typeId=new List<ServiceRes>();
         public virtual List<TaskHasEmployee> task {get;set;}
         public virtual List<ShiftRes> shift{get;set;}

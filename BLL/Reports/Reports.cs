@@ -36,7 +36,9 @@ namespace Fixit.BLL.Reports
                 .ThenInclude(m=>m.employee).OrderByDescending(m=>m.id).ToList();
             }
             else{
-                taskList =db.tasks.Where(m=>m.enable==true && m.date >=req.fromDate && m.date<=req.toDate)
+                if(req.orderId!=0)
+                {
+                    taskList =db.tasks.Where(m=>m.enable==true && m.id==req.orderId)
                 .Include(c=>c.services_employee)
                 .ThenInclude(m=>m.selectedservice)
                 .Include(m=>m.services_employee)
@@ -46,6 +48,21 @@ namespace Fixit.BLL.Reports
                 .ThenInclude(m=>m.selected_shift)
                 .Include(m=>m.services_employee)
                 .ThenInclude(m=>m.employee).OrderByDescending(m=>m.id).ToList();
+                }
+                else{
+                    taskList =db.tasks.Where(m=>m.enable==true)
+                .Include(c=>c.services_employee)
+                .ThenInclude(m=>m.selectedservice)
+                .Include(m=>m.services_employee)
+                .ThenInclude(m=>m.selected_features)
+                .ThenInclude(m=>m.features)
+                .Include(m=>m.services_employee)
+                .ThenInclude(m=>m.selected_shift)
+                .Include(m=>m.services_employee)
+                .ThenInclude(m=>m.employee).OrderByDescending(m=>m.id).ToList();
+                }
+                
+                
             }
              if(req.serviceId!=0 && req.employeeId==0 && req.featureId!=0)
             {

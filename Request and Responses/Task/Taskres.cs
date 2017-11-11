@@ -31,6 +31,7 @@ namespace Fixit.Request_and_Responses.Task
         public string paymentStatus { get; set; }
         public string complete {get;set;}
         public string comments {get;set;}
+        public int count {get;set;}
         public string image {get;set;}
     }
 

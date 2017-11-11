@@ -328,8 +328,8 @@ namespace Fixit.BLL
                 ShiftRes res = new ShiftRes();
                 res.id = getShf[i].id;
                 res.name = getShf[i].name;
-                res.sTime = getShf[i].sTime.ToString();
-                res.eTime = getShf[i].eTime.ToString();
+                res.sTime = getShf[i].sTime.TimeOfDay.ToString();
+                res.eTime = getShf[i].eTime.TimeOfDay.ToString();
                 res.enable = getShf[i].enable;
                 
                        if(getShf[i].day1==true)

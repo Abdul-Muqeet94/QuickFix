@@ -75,7 +75,7 @@
 
 	});
 
-	app.controller("featureController", function ($scope, $http, $rootScope, close, ModalService, NgMap) {
+	app.controller("featureController", function ($scope,$http, $rootScope, close, ModalService, NgMap) {
 
 		$scope.shiftFilter={name:"",date:""};
 
@@ -128,7 +128,7 @@ $rootScope.task.location =val.latitude+","+val.longitude ;
 					$scope.task.house_no = response.data.results[0].formatted_address;
 				});
 		}
-		$scope.message = $http.post('https://testing.danishtest.ml/api/service/view', $rootScope.permService).
+		$scope.message = $http.post('https://testing.danishtest.ml/api/service/view/', $rootScope.permService).
 			then(function (response) {
 
 				$rootScope.service = response.data[0];
@@ -225,7 +225,7 @@ $rootScope.task.location =val.latitude+","+val.longitude ;
 $scope.task.image= btoa(reader.result); 
  
        console.log($rootScope.task);
-				$scope.message = $http.post('https://testing.danishtest.ml/api/task/create', $scope.task).
+				$scope.message = $http.post('https://testing.danishtest.ml/api/task/create/', $scope.task).
 					then(function (response) {
 						console.log(response.data);
 					});
@@ -236,7 +236,7 @@ else
 	console.log("not present");
        console.log($rootScope.task);
 				
-				$scope.message = $http.post('https://testing.danishtest.ml/api/task/create', $scope.task).
+				$scope.message = $http.post('https://testing.danishtest.ml/api/task/create/', $scope.task).
 					then(function (response) {
 						console.log(response.data);
 					});

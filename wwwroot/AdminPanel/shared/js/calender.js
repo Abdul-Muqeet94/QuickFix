@@ -111,12 +111,12 @@
       $scope.new.id = 0;
       $scope.new.enable = true;
       console.log($scope.new);
-      $scope.message = $http.post('http://localhost:5000/api/shift/create', $scope.new).
+      $scope.message = $http.post('http://localhost:5000/api/shift/create/', $scope.new).
         then(function (response) {
           console.log(response.data);
 
 
-          $scope.message = $http.post('http://localhost:5000/api/shift/view', '-1').
+          $scope.message = $http.post('http://localhost:5000/api/shift/view/', '-1').
             then(function (response) {
               console.log("qwertyuioplkjhg" + response.data);
               for (var i = 0; i < response.data.length; i++) {

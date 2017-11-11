@@ -1,13 +1,8 @@
 
 using System;
-using System.Net;
 using System.Net.Mail;
-using System.Threading.Tasks;
-using System.Web;
 using MailKit.Net.Smtp;
-using MailKit.Security;
 using MimeKit;
-using Newtonsoft.Json;
 
 namespace Fixit.Utils
 {
@@ -17,7 +12,6 @@ namespace Fixit.Utils
         {
             try
             {
-
                 var message = new MimeMessage();
 
                 message.From.Add(
@@ -30,23 +24,15 @@ namespace Fixit.Utils
                 var bodyBuilder = new BodyBuilder ();
                 bodyBuilder.HtmlBody = body;
                 message.Body = bodyBuilder.ToMessageBody ();
-                // body=JsonConvert.SerializeObject(body);
-                // message.Body=new TextPart ("html") { Text = body };
-            //    message.Body = new MimeKit.Multipart("alternative")
-            //     {
-            //         html=body;
-            //     }; 
+               
                 using (var client = new SmtpClient())
                 {
-                    client.Connect(Constant.MAIL_HOST_ADDRESS, Constant.MAIL_HOST_PORT, SecureSocketOptions.SslOnConnect);
-
+                    client.Connect(Constant.MAIL_HOST_ADDRESS, Constant.MAIL_HOST_PORT, MailKit.Security.SecureSocketOptions.SslOnConnect);
 
                     client.AuthenticateAsync(
                          Constant.MAIL_AUTHENTICAITON_USER,
                          Constant.MAIL_AUTHENTICATION_PASSWORD
                      ).Wait();
-
-
                      client.Send(message);
                      client.Disconnect(true);
                  }
@@ -57,11 +43,12 @@ namespace Fixit.Utils
              }
              catch (Exception EX)
              {
-                 return false;
-             }
+                 Console.WriteLine("Exception caught in CreateTestMessage2(): {0}", 
+                  EX.ToString() );
+                            
+                             }
+                             return false;
         }
-
-
 
         // public void sendEmail(string email,string msg)
         // {

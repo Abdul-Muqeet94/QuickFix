@@ -17,6 +17,7 @@ namespace Fixit.Request_and_Responses.Employee
         public string emiratesId {get;set;}
         public string address {get;set;}
         public string nationality {get;set;}
+        public string skill {get;set;}
         public List<int> typeId {get;set;}
         public List<int> shifts {get;set;}
         public bool status {get;set;}
