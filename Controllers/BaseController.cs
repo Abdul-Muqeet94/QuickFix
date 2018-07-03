@@ -8,6 +8,7 @@ namespace Fixit.Controllers
     {
         protected readonly FixitContext _db;
       
+       
         public BaseController (FixitContext context){
  
         _db=context;

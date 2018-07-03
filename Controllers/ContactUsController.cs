@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Fixit.Models;
 using Fixit.Request_and_Responses;
 using Fixit.Request_and_Responses.ContactUS;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fixit.Controllers
@@ -12,13 +13,12 @@ namespace Fixit.Controllers
         {}
         
          [Route("api/contactus/create"), HttpPost]
-
         public BaseResponse addContactUs ([FromBody] ContactUsReq req)
         {
             return new BLL.ContactUs.ContactUs(_db).create(req);
         }
-        [Route("api/contactus/view"), HttpPost]
 
+        [Route("api/contactus/view"), HttpPost]
         public List<ContactUsRes> viewContactUs ([FromBody] int req)
         {
             return new BLL.ContactUs.ContactUs(_db).view(req);

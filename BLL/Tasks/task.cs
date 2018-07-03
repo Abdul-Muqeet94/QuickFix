@@ -669,7 +669,7 @@ public BaseResponse cancelTask(CompleteTaskReq req)
             }
             for (int i = 0; i < getTsk.Count; i++)
             {
-                bool todo=true;
+                //bool todo=true;
                 string[] words=new string[2];
                 TaskRes res = new TaskRes();
                 List<ServiceRes> services=new List<ServiceRes>();

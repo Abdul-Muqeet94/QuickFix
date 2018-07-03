@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Fixit.Request_and_Responses.Service;
 using Fixit.Request_and_Responses.Feature;
+using Microsoft.AspNetCore.Cors;
 
 namespace Fixit.Controllers
 {

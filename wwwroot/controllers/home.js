@@ -17,6 +17,7 @@
 
 $scope.fillForm=function(serviceName)
 {
+    console.log(serviceName);
  var name =serviceName;
 				if (name == "AC Service & Repair") {
                     $rootScope.savedService=name;
@@ -44,19 +45,19 @@ $scope.fillForm=function(serviceName)
                 return;
              
         }
-                else if (name == "Aluminum & Glass Work") {
+                else if (name == "Electrical Equipments Repairing") {
                     $rootScope.savedService=name;
-                    $location.path('/glass');
+                    $location.path('/Electrical Equipments');
                  return;   
              }
-                else if (name == "Carpenter") {
+                else if (name == "carpenter") {
                     $rootScope.savedService=name;
                   $location.path('/carpenter');
                  return;   
              }
-                else if (name == "Drilling & Hanging") {
+                else if (name == "generator") {
                   $rootScope.savedService=name;
-                   $location.path('/drilling');
+                   $location.path('/generator');
 
 return;
 }
@@ -78,9 +79,9 @@ return;
 }
 
 
-               else if (name == "Ceiling") {
+               else if (name == "Refrigerator and Dispenser") {
                   $rootScope.savedService=name;
-                   $location.path('/ceiling');
+                   $location.path('/Refrigerator and Dispenser');
 
 return;
 }
@@ -144,9 +145,9 @@ $scope.book=function()
                 
              $scope.BookNow();    
         }
-                else if (name == "Aluminum & Glass Work") {
+                else if (name == "Electrical Equipments Repairing") {
                     $rootScope.service = $scope.selectedService.originalObject;
-                    $rootScope.pageName = "Aluminum & Glass Work";
+                    $rootScope.pageName = "Electrical Equipments Repairing";
                     // $location.path('/glass');
                  $scope.BookNow();   
              }
@@ -238,8 +239,8 @@ $scope.BookNow();
                 $scope.BookNow();
                 return;
             }
-            else if (name == "Aluminum & Glass Work") {
-                $rootScope.pageName="Aluminum & Glass Work";
+            else if (name == "Electrical Equipments Repairing") {
+                $rootScope.pageName="Electrical Equipments Repairing";
                 // $location.path('/glass');
                 $scope.BookNow();
                 return;
@@ -250,15 +251,15 @@ $scope.BookNow();
               $scope.BookNow();
                 return;
             }
-            else if (name == "Drilling & Hanging") {
-                $rootScope.pageName="Drilling & Hanging";
+            else if (name == "generator") {
+                $rootScope.pageName="generator";
                 // $location.path('/drilling');
                 $scope.BookNow();
                 
                 return;
             }
-            else if (name == "Ceiling") {
-                $rootScope.pageName="Ceiling";
+            else if (name == "Refrigerator and Dispenser") {
+                $rootScope.pageName="Refrigerator and Dispenser";
                 // $location.path('/ceiling');
                $scope.BookNow();
                 return;

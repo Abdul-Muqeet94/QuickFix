@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+	<link href="css/clockpicker_custom_style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap-clockpicker.min.css">
+</head>
+
+<body>
+	<h4>Shift Details </h4>
+	<form ng-submit="addShift()">
+
+		<input type="text" ng-model="shift.name" />
+		<br>
+		<div class="clearfix">
+			<div class="input-group clockpicker pull-center" data-placement="left" data-align="top" data-autoclose="true">
+				<input type="text" class="form-control" value="13:14">
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-time"></span>
+				</span>
+			</div>
+		</div>
+		<br>
+
+		<div class="clearfix">
+			<div class="input-group clockpicker pull-center" data-placement="left" data-align="top" data-autoclose="true">
+				<input type="text" class="form-control" value="13:14">
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-time"></span>
+				</span>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Update Shift</button>
+	</form>
+
+
+	<ng-weekday-selector ng-disabled="isDisabled" ng-model="days" ng-change="changed=true;"></ng-weekday-selector>
+	<div>
+		<div ng-repeat="day in days">{{day.name}}: {{day.isSelected}}</div>
+	</div>
+	<div>has changed = {{(changed)?true:false}}</div>
+
+
+
+</body>
+<script src="js/lib/jquery.min.js"></script>
+<!-- jquery vendor -->
+
+<script type="text/javascript" src="js/bootstrap-clockpicker.min.js"></script>
+<script type="text/javascript">
+	$('.clockpicker').clockpicker()
+		.find('input').change(function () {
+			console.log(this.value);
+		});
+
+</script>
+
+</html>

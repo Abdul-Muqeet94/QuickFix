@@ -105,6 +105,12 @@
                 console.log("this is the model to use");
                 console.log($scope.task);
                 getEmployees($scope.task.shiftId);
+            }, function (response){
+                console.log(response.statusText);
+                if(response.statusText=="Internal Server Error"){
+                    alert("You cannot continue forward without adding an employee! please add an employee first")
+                    $location.path('/order');
+                }
             });
         function getEmployees(val) {
             $http.post('http://localhost:5000/api/shift/getshiftemployees', val)

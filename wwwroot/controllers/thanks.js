@@ -21,7 +21,7 @@ $scope.close = function(result) {
 console.log($rootScope.task);
 
  
-$scope.message = $http.post('https://testing.danishtest.ml/api/task/create',$scope.task).
+$scope.message = $http.post('http://localhost:5000/api/task/create',$scope.task).
     then(function (response){
       console.log(response.data);
     });

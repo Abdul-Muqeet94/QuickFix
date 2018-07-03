@@ -6,7 +6,7 @@
 app.controller("formController", function($scope,$http,$rootScope,$location,ModalService) {
   
   
- $scope.message = $http.post('https://testing.danishtest.ml/api/cms/viewbypage','"' + $rootScope.pageName + '"').
+ $scope.message = $http.post('http://localhost:5000/api/cms/viewbypage','"' + $rootScope.pageName + '"').
             then(function (response) {
                 $scope.cms = response.data;
                 console.log($scope.cms);
@@ -19,8 +19,9 @@ $scope.BookNow= function()
     controller: "featureController"
   }).then(function(modal) {
 
-   modal.element.modal();
+     modal.element.modal();
     modal.close.then(function(result) {
+      console.log(result);
     });
   });
 
@@ -28,12 +29,12 @@ $scope.BookNow= function()
 
   $scope.bookByRef1=function(ind)
         {         
-  $scope.message = $http.post('https://testing.danishtest.ml/api/service/view', ind).
+  $scope.message = $http.post('http://localhost:5000/api/service/view', ind).
             then(function (response) {
                $rootScope.service=  response.data[0];
                 $rootScope.pageName=response.data[0].name;
                 $rootScope.permService=ind;
-$scope.BookNow();   
+                $scope.BookNow();   
          });
    
         }
@@ -47,7 +48,7 @@ $scope.request=function()
   console.log($scope.problem);
 
   
- $scope.message = $http.post('https://testing.danishtest.ml/api/contactus/create/',$scope.problem).
+ $scope.message = $http.post('http://localhost:5000/api/contactus/create/',$scope.problem).
             then(function (response) {
                 console.log(response.data);
                 $scope.problem.name="";

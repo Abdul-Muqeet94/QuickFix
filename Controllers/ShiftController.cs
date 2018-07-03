@@ -6,6 +6,7 @@ using Fixit.Request_and_Responses.Service;
 using Fixit.Request_and_Responses.Shifts;
 using System;
 using Fixit.Request_and_Responses.Employee;
+using Microsoft.AspNetCore.Cors;
 
 namespace Fixit.Controllers
 {

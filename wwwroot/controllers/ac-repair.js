@@ -5,7 +5,7 @@
 
 app.controller("homeController", function($scope,$http,$rootScope,$location) {
 
-$scope.message = $http.post('https://testing.danishtest.ml/api/services/view',0).
+$scope.message = $http.post('http://localhost:5000/api/services/view',0).
     then(function (response){
     $scope.services=response.data;
          

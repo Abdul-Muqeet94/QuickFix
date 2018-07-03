@@ -7,12 +7,12 @@
         $scope.emp={name:"",email:"",code:"",nationality:"",contactNo:"",emiratesId:"",address:"",typeId:[]}
         $scope.selected = [];
         $scope.selectedShift=[];
-         $http.post('https://testing.danishtest.ml/api/service/view/', 0)
+         $http.post('http://localhost:5000/api/service/view/', 0)
         .then(function (response) {
             $scope.services = response.data;
             console.log($scope.services);
         });
-         $http.post('https://testing.danishtest.ml/api/shift/view/', 0)
+         $http.post('http://localhost:5000/api/shift/view/', 0)
         .then(function (response) {
             $scope.shifts = response.data;
             console.log($scope.shifts);
@@ -66,7 +66,7 @@
                  $scope.emp.shifts=$scope.selectedShift;
                  $scope.emp.skill=$scope.selectedSkill;
                  console.log($scope.emp);
-            $scope.message = $http.post('https://testing.danishtest.ml/api/employee/create/', $scope.emp).
+            $scope.message = $http.post('http://localhost:5000/api/employee/create/', $scope.emp).
             then(function (response) {
               console.log(response.data);
                swal({
@@ -95,18 +95,18 @@
          }
             $scope.selected=[];
             $scope.selectedShift=[];
-          $http.post('https://testing.danishtest.ml/api/service/view/', 0)
+          $http.post('http://localhost:5000/api/service/view/', 0)
         .then(function (response) {
             $scope.services = response.data;
             console.log($scope.services);
         });
-        $http.post('https://testing.danishtest.ml/api/shift/view/', 0)
+        $http.post('http://localhost:5000/api/shift/view/', 0)
         .then(function (response) {
             $scope.shifts = response.data;
             console.log($scope.shifts);
             
         });
-          $http.post('https://testing.danishtest.ml/api/employee/view/', $rootScope.empid)
+          $http.post('http://localhost:5000/api/employee/view/', $rootScope.empid)
         .then(function (response) {
             
             $scope.employeeList = response.data;
@@ -170,7 +170,7 @@
             $scope.employee.shifts=$scope.selectedShift;
             console.log($scope.employee);
             //api/employee/edit
-             $http.post('https://testing.danishtest.ml/api/employee/edit/', $scope.employee)
+             $http.post('http://localhost:5000/api/employee/edit/', $scope.employee)
         .then(function (response) {
             $scope.data = response.data;
             console.log($scope.data);

@@ -1,0 +1,81 @@
+<!-- END chat Sidebar-->
+<style>
+	button.btn.btn-info.btn-flat.btn-addon.btn-sm.m-b-10.m-l-5 {
+    width: 100px;
+}
+	</style>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-8 p-0">
+			<div class="page-header">
+				
+			</div>
+		</div>
+		<div class="col-lg-4 p-0">
+			<div class="page-header">
+				<div class="page-title">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-content">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card alert">
+					<div class="card-header">
+						<h4>Employee</h4>
+						<div class="card-header-right-icon">
+						
+						</div>
+					</div>
+					<!--start here-->
+					<div class="bootstrap-data-table-panel" ng-app="datatableModule" ng-controller="datatableController">
+						<table class="table table-responsive" datatable="ng" dt-options="dtOptions">
+							<thead>
+								<tr>
+									<th>S. No.</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Employee ID</th>
+									<th>Address</th>
+									<th>Contact No</th>
+									<th>Emirates Id</th>
+									<th>Nationality</th>
+									<th>Service Type</th>
+									<th>skill</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="user in users">
+									<td style="width:10% !important;word-wrap:break-word;">{{user.id}}</td>
+									<td style="width:10% !important;word-wrap:break-word;">{{user.name}}</td>
+									<td style="width:10% !important; word-wrap:break-word;">{{user.email}}</td>
+									<td style="width:10% !important;word-wrap:break-word;">{{user.code}}</td>
+									<td style="width:10% !important;word-wrap:break-word;">{{user.address}}</td>
+									<td style="width:10% !important;word-wrap:break-word;">{{user.contactNo}}</td>
+									<td style="width:10% !important;word-wrap:break-word;">{{user.emiratesId}}</td>
+									<td style="width:10% !important;word-wrap:break-word;">{{user.nationality}}</td>
+									<td style="width:10% !important;word-wrap:break-word;"><div ng-repeat="service in user.typeId">{{service.name}}</div></td>
+									<td style="width:10% !important;word-wrap:break-word;">{{user.skill}}</td>
+									<td style="width:10% !important;word-wrap:break-word;"><button ng-click="delete(user.id)" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-close"></i> Delete</button>
+										<button ng-click="update(user.id)" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-close"></i>Update</button>
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--End here-->
+				</div>
+				<!-- /# card -->
+			</div>
+			<!-- /# column -->
+		</div>
+		<!-- /# row -->
+	</div>
+	<!-- /# main content -->
+</div>
+<!-- /# container-fluid -->

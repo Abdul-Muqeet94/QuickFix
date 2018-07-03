@@ -27,14 +27,14 @@ namespace Fixit
         {
             services.AddDbContext<Fixit.Models.FixitContext>(options =>
     options.UseMySql(Configuration.GetConnectionString("mySqlConnection")));
-    //services.AddScoped<Fixit.Controllers.ValuesController>();
-     services.AddDirectoryBrowser();
-     // Add framework services.
+            //services.AddScoped<Fixit.Controllers.ValuesController>();
+            services.AddDirectoryBrowser();
+            // Add framework services.
             services.AddMvc();
             services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
             services.AddSingleton<Microsoft.AspNetCore.Http.IHttpContextAccessor, Microsoft.AspNetCore.Http.HttpContextAccessor>();
-            
-             services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+
+            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
             services.AddSession();
             /*Adding swagger generation with default settings*/
             services.AddSwaggerGen(options =>
@@ -52,6 +52,17 @@ namespace Fixit
             {
                 options.ForwardWindowsAuthentication = true;
             });
+
+            services.AddCors(options =>
+    {
+        options.AddPolicy("AllowAllHeaders",
+              builder =>
+          {
+              builder.AllowAnyOrigin()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
+          });
+    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,14 +70,15 @@ namespace Fixit
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-             app.UseSession();
+            app.UseSession();
             /*Enabling swagger file*/
             app.UseSwagger();
             /*Enabling Swagger ui, consider doing it on Development env only*/
             app.UseSwaggerUi();
             app.UseDefaultFiles();
             app.UseStaticFiles();
-
+// Shows UseCors with named policy.
+    app.UseCors("AllowAllHeaders");
             /*     app.UseMvc(routes =>
         {
             routes.MapRoute(

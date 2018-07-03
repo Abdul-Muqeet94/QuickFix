@@ -1,0 +1,70 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-8 p-0">
+
+		</div>
+		<div class="col-lg-4 p-0">
+			<div class="page-header">
+				<div class="page-title">
+					<ol class="breadcrumb text-right">
+						<li><a href="#">Shift Managemnt</a></li>
+						<li class="active">Add Shift</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-content">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card alert">
+					<div class="card-body">
+						<div class="basic-form">
+							<form ng-submit="addShift()">
+								<input type="hidden" ng-model="shift.id" />
+								<div class="col-lg-12 form-group">
+									<div class="col-lg-4">
+										<div class="col-lg-4"><label>Name</label></div>
+										<div class="col-lg-8"><input type="text" ng-model="shift.name" /></div>
+									</div>
+									<div class="col-lg-4">
+										<div class="col-lg-4"> <label>Start Time</label></div>
+										<div class="col-lg-8">
+											<input type="text" class="timepicker" id="stime"="{{shift.sTime | date:'hh:mm'}}"></div>
+									</div>
+									<div class="col-lg-4">
+										<div class="col-lg-4"><label>End Time</label></div>
+										<div class="col-lg-8">
+											<input type="text" class="timepicker" id="etime" value="{{shift.eTime | date:'hh:mm'}}"></div>
+									</div>
+
+								</div>
+								<div class="col-lg-12 form-group">
+									<div class="col-lg-2" style="padding-top: 10px;"> Select Days</div>
+									<div class="col-lg-10">
+										<div ng-repeat="day in days" class="standard" flex="50">
+											<label class="checkbox_label"><input type="checkbox"  ng-checked="exists(day.id, selected)" ng-click="toggle(day.id, selected)"/>{{ day.name }}</label>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+								<center>
+									<button type="submit" class="btn btn-primary">Create Shift</button>
+								</center>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /# column -->
+		</div>
+		<!-- /# row -->
+	</div>
+	<!-- /# main content -->
+</div>
+<!-- /# container-fluid -->
+<script>
+	$(document).ready(function () {
+		$('input.timepicker').timepicker({ timeFormat: 'h:mm:ss p' });
+	});
+</script>

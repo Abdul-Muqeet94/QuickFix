@@ -3,6 +3,7 @@ using Fixit.BLL;
 using Fixit.Models;
 using Fixit.Request_and_Responses;
 using Fixit.Request_and_Responses.Employee;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fixit.Controllers {

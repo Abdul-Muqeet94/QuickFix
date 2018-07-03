@@ -1,0 +1,130 @@
+<!-- END chat Sidebar-->
+<div class="content-wrap">
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 p-0">
+                   
+                </div>
+                <!-- /# column -->
+                <div class="col-lg-4 p-0">
+                    <div class="page-header">
+                    </div>
+                </div>
+                <!-- /# column -->
+            </div>
+            <!-- /# row -->
+
+            <div class="main-content col-lg-10 pull-right" ng-app="calenderModule" ng-controller="calenderController">
+                <div class="row">
+                    <div class="col-lg-3 ">
+                        <div class="card alert">
+                            <div class="card-header">
+                                <h4>Shifts</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-9 ">
+                                        <div class="card-box">
+                                            <form ng-submit="addEvent()">
+                                                <label><h4>Shift Title</h4></label>
+                                                <input type="text" ng-model="new.name" />
+                                                <label><h4>Shift Start Date</h4></label>
+                                                <input type="date" ng-model="new.sDate" />
+                                                <label><h4>Shift End Date</h4></label>
+                                                <input type="date" ng-model="new.eDate" />
+
+                                                <label><h4>OR For</h4></label>
+                                                <label><h4>Every</h4></label>
+                                                <select ng-change="unitChanged()" ng-model="new.day">
+                                                    <option ng-selected="new.day == day.id" 
+        ng-repeat="day in days" 
+        ng-value="day.id">{{day.label}}</option>
+                                                     </select>
+                                                <label><h4>Start Time</h4></label>
+                                                <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                                                    <input type="text" ng-model="new.sTime">
+                                                    <span class="input-group-addon">
+                                                          <span class="glyphicon glyphicon-time"></span>
+                                                    </span>
+                                                </div>
+                                                <label><h4>End Time</h4></label>
+                                                <div class="input-group clockpicker" data-placement="left" data-align="top" data-autoclose="true">
+                                                    <input type="text" ng-model="new.eTime">
+                                                    <span class="input-group-addon">
+                                                       <span class="glyphicon glyphicon-time"></span>
+                                                    </span>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">Update Shift</buton>
+            </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="card alert">
+                                <div class="card-header">
+                                    <h4>Calendar</h4>
+                                </div>
+                                <div class="card-body">
+									<div class="row">
+									
+										<div class="col-md-12">
+											<div class="card-box">
+												<!--<div id="calendar"></div>herehere-->
+                                              <div calendar="calendar" ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="events"></div>
+											</div>
+										</div> <!-- end col -->
+                                        <!-- BEGIN MODAL -->
+                                        <script type="text/ng-template" id="modal.html">
+                                            <div class="modal fade">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Yes or No?</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label>Shift Name:</label>
+                                            <p>{{title }}</p>
+                                            <label>Start Time:</label>
+                                            <p>{{start | limitTo:-11}}</p>
+                                            <label>End time:</label>
+                                            <p>{{end | limitTo:-11}}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
+                                            <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </script>
+                            <!-- Modal Add Category -->
+
+                            <!-- END MODAL -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+        </div>
+        <!-- /# row -->
+    </div>
+    <!-- /# main content -->
+</div>
+<!-- /# container-fluid -->
+</div>
+<!-- /# main -->
+</div>
+<!-- /# content wrap -->

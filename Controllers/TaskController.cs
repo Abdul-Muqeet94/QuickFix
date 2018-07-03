@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using Fixit.Request_and_Responses.Task;
 using Fixit.Request_and_Responses.Reports;
+using Microsoft.AspNetCore.Cors;
 
 namespace Fixit.Controllers
 {
@@ -31,7 +32,7 @@ namespace Fixit.Controllers
         {
             return new BLL.Task(_db).getTask(id);
         }
-         [Route("api/task/viewassigntask"), HttpPost]
+         [EnableCors("AllowAllHeaders"),Route("api/task/viewassigntask"), HttpPost]
         public List<TaskRes> viewAssignTask([FromBody] int id)
         {
             return new BLL.Task(_db).getAssignedTask(id);
@@ -42,7 +43,7 @@ namespace Fixit.Controllers
         {
             return new BLL.Task(_db).getCompletedTask(id);
         }
-         [Route("api/task/viewcancelledtask"), HttpPost]
+        [Route("api/task/viewcancelledtask"), HttpPost]
         public List<TaskRes> viewCancelledTask([FromBody] int id)
         {
             return new BLL.Task(_db).getCancelledTask(id);

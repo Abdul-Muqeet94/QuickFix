@@ -3,6 +3,7 @@ using Fixit.Request_and_Responses;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Fixit.Request_and_Responses.Headings;
+using Microsoft.AspNetCore.Cors;
 
 namespace Fixit.Controllers
 {

@@ -1,6 +1,5 @@
 using System;
 using System.Security.Cryptography;
-using System.Security.Cryptography;
 
 namespace Fixit.Utils
 {

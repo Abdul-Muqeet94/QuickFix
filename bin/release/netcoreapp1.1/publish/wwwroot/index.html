@@ -1,0 +1,289 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="angucomplete-alt/angucomplete-alt.css" rel="stylesheet">
+    <link rel="stylesheet" href="shared/css/cloudfare.css" />
+    <link href="shared/css/angular-date-picker.css" rel="stylesheet">
+    
+
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/carousel.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+  <!--Slik Slider-->
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+  <!--Slik Slider-->
+
+
+  <!-- Owl Carousel Assets -->
+  <link href="css/owl.carousel.css" rel="stylesheet">
+  <link href="css/owl.theme.css" rel="stylesheet">
+<style>
+    
+.pac-container {
+    z-index: 1051 !important;
+}
+	/* Preloader */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 99;
+  /* makes sure it stays on top */
+}
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url(images/status.gif);
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
+ .corners {
+      text-align: center;
+      font-weight: 700;
+      width: 170px;
+      height: 60px;
+      background-color: white;
+      margin: 3px 3px 10px 3px;
+      padding-top: 20px;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    .corners:hover {
+      background-color: #09ddec;
+    }
+
+    .color {
+      color: #09ddec;
+    }
+
+    .mymod {
+      align-items: center;
+    }
+
+    .check-element {
+      border: 1px solid black;
+      opacity: 1;
+      padding: 10px;
+    }
+
+
+    .mapcss {
+      width: 550px;
+      height: 300px;
+
+    }
+</style>
+</head>
+
+<body >
+     <!-- Preloader -->
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<div ng-app="mainModule">
+
+<div id="wrapper" >
+  
+    <div class="header_top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="left_header_side">
+              <p> Stay connected: </p>
+              <div class="icons_social_media">
+                <a href="https://www.facebook.com/Assany/ ">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/assany ">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/annany">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="right-header_top">
+              <p> Working hours: 24 hours </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top-fix">
+      <div class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3 col-xs-12">
+              <div class="logo">
+                <img src="images/logo.png" class="img-responsive" alt="" /> </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="header_cta">
+
+                <div class="here_quick_fix">
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                  <h4> WhatsApp
+                    <span> 0331 222 44 11 </span>
+                  </h4>
+                </div>
+
+
+                <div class="here_quick_fix">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <h4> CALL US NOW
+                    <span>0331 222 44 11 </span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="navigation_bar">
+        <div class="container">
+          <div class="navbar " role="navigation">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="navbar-collapse collapse" ng-controller="homeController" >
+                <ul class="nav navbar-nav  wow fadeInRight">
+                  <li class="active">
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="/#/about-us" >About Us</a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="">Our Service</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="" ng-click="fillForm('AC Service & Repair')">AC Service & Repair</a>
+                      </li>
+                      <li>
+                        <a href="" ng-click="fillForm('CCTV Camera')">CCTV Camera</a>
+                      </li>
+                      <!--<li>
+                        <a href="" ng-click="fillForm('Marble Tiles & Sanitary')">Marble Tiles & Sanitary</a>
+                      </li-->
+                      <li>
+                        <a href="" ng-click="fillForm('Electrician')">Electrician</a>
+                      </li>
+                     <!-- <li>
+                        <a href="" ng-click="fillForm('House Painters')">House Painters</a>
+                      </li-->
+                      <li>
+                        <a href="" ng-click="fillForm('Electrical Equipments Repairing')">Electrical Equipments Repairing</a>
+                      </li>
+                      <li>
+                        <a href="" ng-click="fillForm('carpenter')">carpenter</a>
+                      </li>
+                      <li>
+                        <a href="" ng-click="fillForm('generator')" >Generator </a>
+                      </li>
+                      <li>
+                        <a href="" ng-click="fillForm('Refrigerator and Dispenser')" >Refrigerator and Dispenser </a>
+                      </li>
+                      <!--<li>
+                        <a href="" ng-click="fillForm('Drilling & Hanging')">Drilling & Hanging</a>
+                      </li-->
+                      <!--<li>
+                        <a href="" ng-click="fillForm('Ceiling')">Ceiling</a>
+                      </li-->
+                      <li>
+                        <a href="" ng-click="fillForm('Plumbing')">Plumbing</a>
+                      </li>
+                      <!--<li>
+                        <a href="" ng-click="fillForm('Bathroom Deep Cleaning')">Bathroom Deep Cleaning</a>
+                      </li-->
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="/#/contacts">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+   
+    </div>
+
+    <div ng-controller="mainController">
+
+        <div ui-view></div>
+    </div>
+    
+</div>
+<div>
+
+
+
+        
+
+
+</body>
+<script>
+    $(window).on('load', function() { // makes sure the whole site is loaded 
+  $('#status').fadeOut(); // will first fade out the loading animation 
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  $('body').delay(300).css({'overflow':'visible'});
+});
+    </script>
+<!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+<script src="shared/js/cloudfare.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="shared/js/angular_1.5.6.js"></script>
+<script src="shared/js/angular-date-picker.js"></script>
+<script src="angular-route/angular-route.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<!-- <script src="angular-animate/angular-animate.js"></script> -->
+<script src="angucomplete-alt/angucomplete-alt.js"></script>
+
+<script src="js/angular-modal-service.min.js"></script>
+<script src="controllers/address.js"></script>
+<script src="controllers/form.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDb9pC7DKXyTOx-47fMOQRumx4O3d7bJN0"></script>
+<!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>-->
+<script src="controllers/feature.js"></script>
+<script src="controllers/home.js"></script>
+<script src="controllers/calendar.js"></script>
+<script src="controllers/thanks.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-animate.min.js"></script>
+<script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>
+<script src="shared/js/main.js"></script>
+</html>

@@ -1,0 +1,227 @@
+<style>
+    .div1 {width: 300px;height: 100px;border: 1px;}
+    </style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 p-0">
+          
+        </div>
+        <div class="col-lg-4 p-0">
+            <div class="page-header">
+                <div class="page-title">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card alert">
+                   
+                    <!---------View Customer ------------>
+                    <div class="row" ng-app="taskModule" ng-controller="assignTask">
+                        <div class="col-lg-12">
+                            <div class="card alert">
+                                <div class="card-header">
+                                
+                                </div>
+                                <div class="card-body">
+                                    <div class="col-lg-12">
+                                        <form ng-submit="save()">
+                                            <div class="col-lg-6">
+
+                                                <table class="table table-responsive">
+                                                    <thead class="th_bg">
+                                                        <tr>
+
+                                                            <th>Customer: </th>
+                                                            <th>{{task.name}}</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Order No: </td>
+                                                            <td>{{task.id}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Customer Contact No: </td>
+                                                            <td>{{task.customer_contact}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Service Ordered: </td>
+                                                            <td ng-repeat="service in task.selected_features">
+                                                                <div class="badge badge-primary">{{service.name}}</div>
+                                                                <div ng-repeat="feature in service.feature">{{feature.name}}</div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Date: </td>
+                                                            <td>{{task.date}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>House No: </td>
+                                                            <td>{{task.house_no}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Address: </td>
+                                                            <td> {{task.landmark}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Call Up Charges: </td>
+                                                            <td>AED {{task.callUpCharges}}</td>
+                                                        </tr>
+
+
+                                                        <tr>
+                                                            <td>Payment Status: </td>
+                                                            <td>{{task.paymentStatus}} </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br>
+                                                <h4 class="sub_heading">Assign Order</h4>
+                                                <br>
+
+                                                <!--new work from -->
+                                                <div class="form-group">
+
+                                               
+
+
+                                                    <div class="row">
+                                                        <div ng-repeat="emp in employees" class="col-md-6" flex="50">
+                                                            <label class="checkbox_label">
+                                                          <input type="checkbox" class="checkbox_label" ng-checked="exists(emp.employee.id, selected)" 
+                                                          ng-click="toggle(emp.id, selected)"/>
+                                                        
+                                                        <span class="label_name">   {{ emp.name }}
+                                                        </span>
+                                                        </label>
+                                                        </div>
+                                                     <label  class="form-group">Add Comments</label>
+                                                     <textarea  class="form-control" type="text" ng-model="createTask.comments"/></br></br></br>
+                                                    </div>
+
+                                                   
+                                                    <!-- <code style="display: block; padding: 8px;">{{selected | json}}</code> -->
+                                                </div>
+                                                <!--Work here-->
+
+
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="order_map">
+                                                    <h4>Customer Location Map</h4>
+                                                    <ng-map zoom="11" center="[{{task.lat}},{{task.longg}}]">
+                                                        <marker position="[{{task.lat}}, {{task.longg}}]" />
+                                                        <shape name="circle" radius="400" center="[{{task.lat}},{{task.longg}}]" radius="4000" />
+                                                        <control name="overviewMap" opened="true" />
+                                                    </ng-map>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <img data-ng-src="{{getImage(task.image)}}" height="200dp" width="200dp" />
+                                            </div>
+                                            
+                                            <button style="float:left; clear:both; margin-left:15px;" id="buttonSave" type="Assign" class="btn_pri_2 btn btn-primary">Assign</button>
+                                            
+                                        </form>
+                                        <div class="col-md-4">
+                                        <button style="float:left; clear:both; margin-left:15px;" ng-click="cancelledOrder()" class="btn_pri_2 btn btn-primary">Cancel Order</button>
+                                   </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!---------View Customer ------------>
+
+                </div>
+                <!-- /# card -->
+            </div>
+            <!-- /# column -->
+        </div>
+        <!-- /# row -->
+    </div>
+    <!-- /# main content -->
+</div>
+<!-- /# container-fluid -->
+
+<div ng-hide="true"  name="getDiv" id="getDiv">
+    <div id="getDiv">
+        <div style="overflow-x:auto;">
+            <table class="first_row" cellpadding="0" cellspacing="0" border="0" style="font-size:12px; font-family: Arial; line-height: 17px;margin:0 auto;"
+                width="600">
+                <thead class="th_bg">
+                    <tr>
+                        <th style="color: #878787;font-weight: 300;">CUSTOMER: </th>
+                        <th style="text-align: right;color: #878787;font-weight: 300;">{{task.name}} </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Order No: </td>
+                        <td style="text-align: right;">{{task.id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Service Ordered: </td>
+                        <td style="text-align: right;">
+                            <p style="background: #8fc9fb;width: 100px;float: right;text-align: center;padding: 3px 7px;margin: 0;color: #fff;
+    border-radius: 4px;" ng-repeat="service in task.selected_features">{{service.name}}</p>
+                        </td>
+                    </tr>
+                    <tr style="border:0;" ng-repeat="service in task.selected_features">
+                        <td></td>
+                        <td style="padding-top:0;">
+                            <p style="background: #878787;width: 100px;float: right;text-align: center;padding: 3px 7px;margin: 0;color: #fff;
+    border-radius: 4px;" ng-repeat="feature in service.feature">{{feature.name}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date: </td>
+                        <td style="text-align: right;">{{task.date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Time: </td>
+                        <td style="text-align: right;">{{task.shift}}</td>
+                    </tr>
+                    <tr>
+                        <td>Call Up Charges: </td>
+                        <td style="text-align: right;">{{task.callUpCharges}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Payment Status: </td>
+                        <td style="text-align: right;">{{task.paymentStatus}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <table class="first_row" cellpadding="0" cellspacing="0" border="0" style="font-size:12px; font-family: Arial; line-height: 17px;margin:0 auto;"
+            width="600">
+
+            <tr>
+                <td><b style="color: #8fc9fb;font-size: 20px;font-weight: 400;margin: 20px 0;display: inline-block;">Customer Location Map</b><br/>
+                </td>
+                <td>
+                    <img 
+                    src="{{setTipId(task.lat+','+task.longg)}}" width="300px"; height="300px"/>
+                    
+                <!-- <iframe
+  width="200"
+  height="200"
+  frameborder="0" style="border:0"
+  src="{{setTipId('24.8615,67.0099')}}"
+  allowfullscreen>
+</iframe> -->
+</td>
+            </tr>
+        </table>
+    </div>
+</div>

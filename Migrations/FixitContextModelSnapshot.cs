@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Fixit.Models;
 
-namespace Fixit.Migrations
+namespace QuickFix.Migrations
 {
     [DbContext(typeof(FixitContext))]
     partial class FixitContextModelSnapshot : ModelSnapshot
